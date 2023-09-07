@@ -16,7 +16,12 @@
     // можно import path from "path";
     "allowSyntheticDefaultImports": true,
     // esModuleInterop работать с пакетами с помощью импортов (require() module.export) = common js
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    //для абсолютного импорта
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
