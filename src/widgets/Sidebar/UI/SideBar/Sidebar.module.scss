@@ -36,17 +36,18 @@
   margin-top: 10px;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .link {
   opacity: 1;
-  text-decoration: none;
   margin-left: 10px;
   transition: 0.5s opacity ease-in;
+  color: var(--inverted-primary-color);
 }
 
 .icon {
-  fill: var(--primary-color);
+  fill: var(--inverted-primary-color);
 }
 
 .collapsed {
