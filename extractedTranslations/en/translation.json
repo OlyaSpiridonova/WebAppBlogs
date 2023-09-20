@@ -1,5 +1,7 @@
 {
   "Modal": "Modal",
+  "decrement": "decrement",
+  "increment": "increment",
   "throw error": "",
   "toggle": "",
   "Войти": "Войти",
