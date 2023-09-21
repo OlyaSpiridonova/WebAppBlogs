@@ -71,7 +71,6 @@ export const Modal = (props: ModalProps) => {
     const mods: Record<string, boolean> = {
         [style.opened]: isOpen,
         [style.isClosing]: isClosing,
-        [style[theme]]: true,
     };
 
     if (lazy && !isMounted) {
@@ -80,7 +79,7 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(style.Modal, mods, [className])}>
+            <div className={classNames(style.Modal, mods, [className, theme])}>
                 <div className={style.overlay} onClick={closeHandler}>
                     <div
                         className={style.content}

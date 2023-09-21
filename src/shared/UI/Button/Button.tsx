@@ -20,17 +20,24 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ThemeButton;
   square?: boolean;
   size?: ButtonSize;
+  disabled?: boolean;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
     const {
-        className, theme, children, square, size = ButtonSize.M, ...otherProps
+        className, theme, children, square, size = ButtonSize.M, disabled, ...otherProps
     } = props;
+
+    const mods = {
+        [style.square]: square,
+        [style.disabled]: disabled,
+    };
 
     return (
         <button
+            className={classNames(style.Button, mods, [className, style[theme], style[size]])}
             type="button"
-            className={classNames(style.Button, { [style.square]: square }, [className, style[theme], style[size]])}
+            disabled={disabled}
             {...otherProps}
         >
             {children}

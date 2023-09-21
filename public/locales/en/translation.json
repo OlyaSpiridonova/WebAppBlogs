@@ -8,5 +8,8 @@
   "Страница не найдена": "Not Found Page",
   "Обновить страницу": "Reload Page",
   "Произошла ошибка": "An error has occurred, please reload the page",
-  "Modal": "Lorem ipsum dolor sit amet consectetur adipisicing elit.eatae, labore quasi. Quibusdam culpa eligendi quas ducimus expedita!Dolor, molestiae inventore voluptates et assumenda quidem hic sed voluptatem sit libero molestias!"
+  "Ошибка авторизации": "Entered an incorrect username or password",
+  "Войти": "Login",
+  "Форма авторизациии": "Auth form",
+  "Выйти": "Logout"
 }
