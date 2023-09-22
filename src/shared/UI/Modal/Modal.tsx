@@ -2,9 +2,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { UseTheme } from 'app/providers/ThemeProvider';
-import style from './Modal.module.scss';
-import { Portal } from '../Portal/Portal';
+import { Portal } from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
+import cls from './Modal.module.scss';
 
 interface ModalProps {
     className?: string;
@@ -28,7 +28,13 @@ export const Modal = (props: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
-    const { theme } = UseTheme();
+    const { theme } = useTheme();
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -62,15 +68,9 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
     const mods: Record<string, boolean> = {
-        [style.opened]: isOpen,
-        [style.isClosing]: isClosing,
+        [cls.opened]: isOpen,
+        [cls.isClosing]: isClosing,
     };
 
     if (lazy && !isMounted) {
@@ -79,10 +79,10 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(style.Modal, mods, [className, theme])}>
-                <div className={style.overlay} onClick={closeHandler}>
+            <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
+                <div className={cls.overlay} onClick={closeHandler}>
                     <div
-                        className={style.content}
+                        className={cls.content}
                         onClick={onContentClick}
                     >
                         {children}

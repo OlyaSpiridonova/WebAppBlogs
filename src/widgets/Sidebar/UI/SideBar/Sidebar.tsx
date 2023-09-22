@@ -1,71 +1,70 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useState } from 'react';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { LangSwitcher } from 'widgets/LangSwitcher';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonSize, ThemeButton } from 'shared/UI/Button/Button';
-import { AppLink, AppLinkTheme } from 'shared/UI/AppLink/AppLink';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import MainIcon from 'shared/assets/icons/main.svg';
-import AboutIcon from 'shared/assets/icons/about.svg';
-import style from './Sidebar.module.scss';
+import AboutIcon from 'shared/assets/icons/about-20-20.svg';
+import MainIcon from 'shared/assets/icons/main-20-20.svg';
+import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
-  className?: string
+    className?: string;
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
-    const { t } = useTranslation();
     const [collapsed, setCollapsed] = useState(false);
+    const { t } = useTranslation();
+
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
+
     return (
         <div
             data-testid="sidebar"
-            className={classNames(
-                style.Sidebar,
-                { [style.collapsed]: collapsed },
-                [className],
-            )}
+            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
             <Button
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
-                className={style.collapsedBtn}
-                theme={ThemeButton.BACKGROUND_INVERTED}
+                className={cls.collapseBtn}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
                 size={ButtonSize.L}
                 square
             >
                 {collapsed ? '>' : '<'}
-                {' '}
-
             </Button>
-            <div className={style.items}>
+            <div className={cls.items}>
                 <AppLink
+                    theme={AppLinkTheme.SECONDARY}
                     to={RoutePath.main}
-                    theme={AppLinkTheme.PRIMARY}
-                    className={style.item}
+                    className={cls.item}
                 >
-                    <MainIcon className={style.icon} />
-                    <span className={style.link}>
-                        {t('Главная страница')}
+                    <MainIcon className={cls.icon} />
+                    <span className={cls.link}>
+                        {t('Главная')}
                     </span>
                 </AppLink>
                 <AppLink
+                    theme={AppLinkTheme.SECONDARY}
                     to={RoutePath.about}
-                    theme={AppLinkTheme.PRIMARY}
-                    className={style.item}
+                    className={cls.item}
                 >
-                    <AboutIcon className={style.icon} />
-                    <span className={style.link}>
+                    <AboutIcon className={cls.icon} />
+                    <span className={cls.link}>
                         {t('О сайте')}
                     </span>
                 </AppLink>
             </div>
-            <div className={style.switchers}>
+            <div className={cls.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher className={style.lang} short={collapsed} />
+                <LangSwitcher
+                    short={collapsed}
+                    className={cls.lang}
+                />
             </div>
         </div>
     );

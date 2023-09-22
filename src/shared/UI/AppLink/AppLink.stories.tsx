@@ -1,5 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { AppLink, AppLinkTheme } from './AppLink';
@@ -10,43 +10,48 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    args: {
+        to: '/',
+    },
 } as ComponentMeta<typeof AppLink>;
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {
-    children: 'Link Light',
+export const Primary = Template.bind({});
+Primary.args = {
+    children: 'Text',
+    theme: AppLinkTheme.PRIMARY,
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
-    children: 'Link Dark',
+export const Secondary = Template.bind({});
+Secondary.args = {
+    children: 'Text',
+    theme: AppLinkTheme.SECONDARY,
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Red = Template.bind({});
+Red.args = {
+    children: 'Text',
+    theme: AppLinkTheme.RED,
+};
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-    children: 'Link Primary',
+    children: 'Text',
     theme: AppLinkTheme.PRIMARY,
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const Primary = Template.bind({});
-Primary.args = {
-    children: 'Link Primary',
-    theme: AppLinkTheme.PRIMARY,
-};
-
 export const SecondaryDark = Template.bind({});
 SecondaryDark.args = {
-    children: 'Link Primary',
-    theme: AppLinkTheme.PRIMARY,
+    children: 'Text',
+    theme: AppLinkTheme.SECONDARY,
 };
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-    children: 'Link Primary',
-    theme: AppLinkTheme.SECONDARY,
+export const RedDark = Template.bind({});
+RedDark.args = {
+    children: 'Text',
+    theme: AppLinkTheme.RED,
 };
+RedDark.decorators = [ThemeDecorator(Theme.DARK)];
