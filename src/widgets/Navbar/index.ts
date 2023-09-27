@@ -1,4 +1,4 @@
-import { Navbar } from './ui/Navbar';
+import { Navbar } from './UI/Navbar';
 
 export {
     Navbar,
