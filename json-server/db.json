@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": { 
+    "first": "Olya",
+    "lastname": "Spiridonova",
+    "age": "22",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://avatars.githubusercontent.com/u/116333427?s=400&u=6c54acfa5be3378e3b2803e5a63f66bcb87b02da&v=4"
+   }
 }
