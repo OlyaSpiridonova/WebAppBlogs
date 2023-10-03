@@ -1,6 +1,23 @@
 {
     "Профиль":"Profile",
     "Редактировать":"Edit",
+    "Отменить":"Cancel",
+    "Сохранить":"Save",
     "Имя":"First name",
-    "Фамилия":"Last name"
+    "Фамилия":"Last name",
+    "Возраст": "Age",
+    "Город": "City",
+    "Имя пользователя": "Username",
+    "Фото профиля": "User photo",
+    "Укажите валюту": "Choose a currency",
+    "Укажите страну": "Choose a country",
+    "Форма авторизации": "form auth",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректная ссылка на фото профиля": "Incorrect link to profile photo",
+    "Некорректный город": "Incorrect city",
+    "Заполните поле ввода Username": "Fill in the Username input field",
+    "Имя и Фамилия обязательны": "First and Last Name are required",
+    "Данные не указаны": "Data not provided",
+    "Серверная ошибка при сохранении": "Server error when saving"
+    
 }
