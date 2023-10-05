@@ -25,14 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { 
-    "first": "Olya",
-    "lastname": "Spiridonova",
-    "age": "22",
+  "profile": {
+    "first": "OlyaSka",
+    "lastname": "SpiridonovaAA",
+    "age": 23,
     "currency": "RUB",
     "country": "Russia",
     "city": "Moscow",
     "username": "admin",
-    "avatar": "https://avatars.githubusercontent.com/u/116333427?s=400&u=6c54acfa5be3378e3b2803e5a63f66bcb87b02da&v=4"
-   }
+    "avatar": "https://w7.pngwing.com/pngs/641/941/png-transparent-avatar-face-female-people-profile-user-woman-avatar-user-icon.png"
+  }
 }
