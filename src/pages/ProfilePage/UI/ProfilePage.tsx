@@ -10,7 +10,7 @@ import {
     profileActions,
     profileReducer,
 } from 'entities/Profile';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -19,7 +19,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/UI/Text/Text';
-import { ButtonTheme } from 'shared/UI/Button/Button';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 // import style from './ProfilePage.module.scss';
 
@@ -39,6 +40,7 @@ const ProfilePage = () => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams();
 
     const validateErrorTranslates = {
         [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
@@ -50,11 +52,11 @@ const ProfilePage = () => {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
