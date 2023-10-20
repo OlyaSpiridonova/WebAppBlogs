@@ -1,19 +1,19 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import ArticlesPage from './ArticlesPage';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import {
+    Article, ArticleBlockType, ArticleType, ArticleView,
+} from '../../model/types/article';
+import { ArticleList } from './ArticleList';
 
 export default {
-    title: 'pages/ArticlesPage',
-    component: ArticlesPage,
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticlesPage>;
+} as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticlesPage> = () => <ArticlesPage />;
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
 const article: Article = {
     id: '1',
@@ -22,12 +22,12 @@ const article: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
-    type: [ArticleType.IT],
     user: {
         id: '1',
         username: 'Olyaska',
         avatar: 'https://w7.pngwing.com/pngs/641/941/png-transparent-avatar-face-female-people-profile-user-woman-avatar-user-icon.png',
     },
+    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',
@@ -90,13 +90,51 @@ const article: Article = {
     ],
 };
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const ListSmall = Template.bind({});
+ListSmall.args = {
+    articles: new Array(9)
+        .fill(0)
+        .map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
+    views: ArticleView.SMALL,
+    isLoading: false,
+};
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const ListBig = Template.bind({});
+ListBig.args = {
+    articles: new Array(3)
+        .fill(0)
+        .map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
+    views: ArticleView.BIG,
+    isLoading: false,
+};
 
-export const Orange = Template.bind({});
-Orange.args = {};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
+export const ListSmallLoading = Template.bind({});
+ListSmallLoading.args = {
+    articles: new Array(9)
+        .fill(0)
+        .map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
+    views: ArticleView.SMALL,
+    isLoading: true,
+};
+
+export const ListBigLoading = Template.bind({});
+ListBigLoading.args = {
+    articles: new Array(3)
+        .fill(0)
+        .map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
+    views: ArticleView.BIG,
+    isLoading: true,
+
+};
