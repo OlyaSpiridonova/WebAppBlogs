@@ -1,0 +1,16 @@
+.ArticleViewSelector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.notSelected {
+    fill: var(--secondary-color);
+}

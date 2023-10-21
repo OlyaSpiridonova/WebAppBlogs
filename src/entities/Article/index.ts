@@ -1,3 +1,5 @@
+export { ArticleViewSelector } from './UI/ArticleViewSelector/ArticleViewSelector';
+
 export { ArticleList } from './UI/ArticleList/ArticleList';
 
 export { ArticleDetails } from './UI/ArticleDetails/ArticleDetails';
