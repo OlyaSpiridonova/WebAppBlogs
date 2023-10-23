@@ -9,7 +9,7 @@ interface ArticleListProps {
   className?: string;
   articles: Article[];
   isLoading?: boolean;
-  views?: ArticleView;
+  view?: ArticleView;
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -17,41 +17,34 @@ export const ArticleList = memo((props: ArticleListProps) => {
         className,
         articles,
         isLoading,
-        views = ArticleView.SMALL,
+        view = ArticleView.SMALL,
     } = props;
 
-    const getSkeletons = (views: ArticleView) => (
-        new Array(views === ArticleView.SMALL ? 9 : 3)
+    const getSkeletons = (view: ArticleView) => (
+        new Array(view === ArticleView.SMALL ? 9 : 3)
             .fill(0)
             .map((item, index) => (
-                <ArticleListItemSkeleton className={cls.card} key={index} view={views} />
+                <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
             ))
     );
-
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[views]])}>
-                {getSkeletons(views)}
-            </div>
-        );
-    }
 
     const renderArticles = (article: Article) => (
         <ArticleListItem
             className={cls.card}
             article={article}
-            view={views}
+            view={view}
             key={article.id}
         />
     );
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[views]])}>
+        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {
                 articles.length > 0
                     ? articles.map(renderArticles)
                     : null
             }
+            {isLoading && getSkeletons(view) }
         </div>
     );
 });

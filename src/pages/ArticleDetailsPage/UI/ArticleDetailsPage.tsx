@@ -13,6 +13,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/UI/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { isLoading } from 'entities/Comment/UI/CommentCard/CommentCard.stories';
+import { Page } from 'shared/UI/Page/Page';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
@@ -50,21 +51,21 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage)}>
+            <Page className={classNames(cls.ArticleDetailsPage)}>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetailsPage)}>
+            <Page className={classNames(cls.ArticleDetailsPage)}>
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('Вернуться к списку')}</Button>
                 <ArticleDetails id={id} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <Text title={t('Комментарии')} className={cls.commentTitle} />
                 <CommentList isLoading={commentsIsLoading} comments={comments} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

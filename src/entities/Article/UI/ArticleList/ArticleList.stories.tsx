@@ -98,7 +98,7 @@ ListSmall.args = {
             ...article,
             id: String(index),
         })),
-    views: ArticleView.SMALL,
+    view: ArticleView.SMALL,
     isLoading: false,
 };
 
@@ -110,7 +110,7 @@ ListBig.args = {
             ...article,
             id: String(index),
         })),
-    views: ArticleView.BIG,
+    view: ArticleView.BIG,
     isLoading: false,
 };
 
@@ -122,7 +122,7 @@ ListSmallLoading.args = {
             ...article,
             id: String(index),
         })),
-    views: ArticleView.SMALL,
+    view: ArticleView.SMALL,
     isLoading: true,
 };
 
@@ -134,7 +134,7 @@ ListBigLoading.args = {
             ...article,
             id: String(index),
         })),
-    views: ArticleView.BIG,
+    view: ArticleView.BIG,
     isLoading: true,
 
 };
