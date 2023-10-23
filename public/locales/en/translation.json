@@ -20,5 +20,9 @@
   "Форма авторизации": "Auth form",
   "Вы ввели неверный логин или пароль": "Uncorrect username or password",
   "Выйти": "Logout",
-  "Профиль":"Profile"
+  "Профиль":"Profile",
+  "Статьи": "Articles",
+  "Введите текст комментария": "Enter comment text",
+  "Отправить": "Send"
+  
 }

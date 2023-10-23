@@ -8,5 +8,5 @@ interface IconProps {
 }
 
 export const Icon = memo(({ className, Svg }: IconProps) => (
-    <Svg className={classNames(cls.Icon)} />
+    <Svg className={classNames(cls.Icon, {}, [className])} />
 ));

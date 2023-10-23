@@ -13,7 +13,7 @@ interface ArticleTextBlockComponentProps {
 export const ArticleTextBlockComponent = memo(({ className, block }: ArticleTextBlockComponentProps) => {
     const { t } = useTranslation('');
     return (
-        <div className={classNames(cls.ArticleTextBlockComponent)}>
+        <div className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
             {block.title && (
                 <Text title={block.title} className={cls.title} />
             )}
