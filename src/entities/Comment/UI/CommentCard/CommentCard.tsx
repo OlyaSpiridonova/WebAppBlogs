@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Avatar } from 'shared/UI/Avatar/Avatar';
 import { Text } from 'shared/UI/Text/Text';
@@ -17,11 +16,10 @@ interface CommentCardProps {
 
 export const CommentCard = memo((props: CommentCardProps) => {
     const { className, comment, isLoading } = props;
-    const { t } = useTranslation('');
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.CommentCard)}>
+            <div className={classNames(cls.CommentCard, {}, [className])}>
                 <div className={cls.header}>
                     <Skeleton width={30} height={30} border="50%" />
                     <Skeleton className={cls.username} width={100} height={16} />

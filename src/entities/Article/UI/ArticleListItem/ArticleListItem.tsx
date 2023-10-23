@@ -23,7 +23,7 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo((props : ArticleListItemProps) => {
     const { className, article, view } = props;
-    const { t } = useTranslation('');
+    const { t } = useTranslation('article-details');
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
         <>
@@ -55,7 +55,7 @@ export const ArticleListItem = memo((props : ArticleListItemProps) => {
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     )}
                     <div className={cls.footer}>
-                        <Button onClick={onOpenArticle} theme={ButtonTheme.OUTLINE}>{t('Читать далее...')}</Button>
+                        <Button onClick={onOpenArticle} theme={ButtonTheme.OUTLINE}>{t('Читать далее')}</Button>
                         {views}
                     </div>
                 </Card>
