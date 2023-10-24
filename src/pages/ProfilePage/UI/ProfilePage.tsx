@@ -21,7 +21,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/UI/Text/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/UI/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 // import style from './ProfilePage.module.scss';
 

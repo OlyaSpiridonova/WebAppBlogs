@@ -13,7 +13,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/UI/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { isLoading } from 'entities/Comment/UI/CommentCard/CommentCard.stories';
-import { Page } from 'shared/UI/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
