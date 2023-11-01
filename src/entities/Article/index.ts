@@ -7,3 +7,4 @@ export {
 export type { ArticleDetailsSchema } from './model/types/ArticleDetailsShema';
 export { ArticleSortSelector } from './UI/ArticleSortSelector/ArticleSortSelector';
 export { ArticleTypeTabs } from './UI/ArticleTypeTabs/ArticleTypeTabs';
+export { getArticleDetailsData } from './model/selectors/articleDetails';
