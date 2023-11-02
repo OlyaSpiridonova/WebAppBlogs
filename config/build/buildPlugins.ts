@@ -6,7 +6,9 @@ import CopyPlugin from 'copy-webpack-plugin';
 import path from 'path';
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev, project }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({
+    paths, isDev, apiUrl, project,
+}: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
@@ -19,6 +21,7 @@ export function buildPlugins({ paths, isDev, project }: BuildOptions): webpack.W
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __PROJECT__: JSON.stringify(project),
+            __API__: JSON.stringify(apiUrl),
         }),
         new CopyPlugin({
             patterns: [
