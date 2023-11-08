@@ -636,7 +636,7 @@
       "first": "User",
       "lastname": "Profile",
       "age": 25,
-      "currency": "RUB",
+      "currency": "USD",
       "country": "Russia",
       "city": "Moscow",
       "username": "user",

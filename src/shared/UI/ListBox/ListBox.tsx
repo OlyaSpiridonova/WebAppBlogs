@@ -1,6 +1,7 @@
-import { Fragment, ReactNode, useState } from 'react';
+import { Fragment, ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { DropDownDirections } from 'shared/types/ui';
 import cls from './ListBox.module.scss';
 import { Button, ButtonTheme } from '../Button/Button';
 import { HStack } from '../Stack';
@@ -10,8 +11,6 @@ export interface ListBoxItem {
     content: ReactNode;
     disabled?: boolean;
 }
-
-type DropDownDirections = 'top' | 'bottom';
 
 export interface ListBoxProps {
     items?: ListBoxItem[];
@@ -25,8 +24,10 @@ export interface ListBoxProps {
 }
 
 const mapDirectionClass: Record<DropDownDirections, string> = {
-    bottom: cls.optionsBottom,
-    top: cls.optionsTop,
+    bottomLeft: cls.optionsBottomLeft,
+    bottomRight: cls.optionsBottomRight,
+    topLeft: cls.optionsTopLeft,
+    topRight: cls.optionsTopRight,
 };
 
 export function ListBox(props:ListBoxProps) {
@@ -38,7 +39,7 @@ export function ListBox(props:ListBoxProps) {
         label,
         onChange,
         readonly,
-        direction = 'bottom',
+        direction = 'bottomRight',
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction]];
@@ -74,11 +75,13 @@ export function ListBox(props:ListBoxProps) {
                             disabled={item.disabled}
                         >
                             {({ active, selected }) => (
-                                <li className={classNames(
-                                    cls.item,
-                                    { [cls.active]: active, [cls.disabled]: item.disabled },
-                                    [],
-                                )}
+                                <li
+                                    className={classNames(
+                                        cls.item,
+                                        { [cls.active]: active, [cls.disabled]: item.disabled },
+                                        [],
+                                    )}
+                                    key={item.value}
                                 >
                                     {item.content}
                                 </li>
