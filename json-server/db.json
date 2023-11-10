@@ -95,6 +95,18 @@
       "userId": "1",
       "text": "comment",
       "id": "hpK0fI3"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "JAvaScript",
+      "id": "RQI6UHY"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "Kotlin",
+      "id": "aLJKdd5"
     }
   ],
   "articles": [
@@ -633,10 +645,10 @@
     },
     {
       "id": "2",
-      "first": "User",
+      "first": "User 1",
       "lastname": "Profile",
       "age": 25,
-      "currency": "USD",
+      "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
       "username": "user",
