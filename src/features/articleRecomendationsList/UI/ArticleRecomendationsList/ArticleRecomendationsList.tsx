@@ -16,7 +16,7 @@ export const ArticleRecomendationsList = memo((props: ArticleRecomendationsListP
     const { data: articles, isLoading, error } = useArticleRecomendationsList(3);
 
     // Обработать состояние загрузки и ошибки
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
         return null;
     }
     return (
