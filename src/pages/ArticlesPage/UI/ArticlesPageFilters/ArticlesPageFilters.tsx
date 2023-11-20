@@ -2,7 +2,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { articlePageAction } from 'pages/ArticlesPage';
 import {
     ArticleView,
     ArticleViewSelector,
@@ -22,6 +21,7 @@ import {
     getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType, getArticlePageView,
 } from '../../model/selectors/articlePageSelector';
 import cls from './ArticlesPageFilters.module.scss';
+import { articlePageAction } from '../../model/slice/articlePageSlice';
 
 interface ArticlesPageFiltersProps {
   className?: string;
