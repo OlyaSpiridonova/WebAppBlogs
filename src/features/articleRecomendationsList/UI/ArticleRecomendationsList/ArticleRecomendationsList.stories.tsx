@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import withMock from 'storybook-addon-mock';
 import { ArticleRecomendationsList } from './ArticleRecomendationsList';
 
 export default {
@@ -9,12 +10,13 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [withMock],
 } as ComponentMeta<typeof ArticleRecomendationsList>;
 
 const Template: ComponentStory<typeof ArticleRecomendationsList> = (args) => <ArticleRecomendationsList {...args} />;
 const article = {
     id: '1',
-    img: '',
+    img: 'https://itproger.com/img/courses/1476977754.jpg',
     createdAt: '',
     views: 10000,
     user: { id: '1', username: '123' },
