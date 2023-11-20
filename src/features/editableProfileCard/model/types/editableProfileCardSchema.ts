@@ -1,14 +1,5 @@
 import { Profile } from 'entities/Profile';
-
-export enum ValidateProfileError {
-    INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
-    INCORRECT_AGE = 'INCORRECT_AGE',
-    INCORRECT_CITY = 'INCORRECT_CITY',
-    INCORRECT_USERNAME = 'INCORRECT_USERNAME',
-    INCORRECT_AVATAR = 'INCORRECT_AVATAR',
-    SERVER_ERROR = 'SERVER_ERROR',
-    NO_DATA = 'NO_DATA'
-}
+import { ValidateProfileError } from '../consts/consts';
 
 export interface ProfileSchema {
     data?: Profile;
@@ -18,3 +9,4 @@ export interface ProfileSchema {
     readonly: boolean;
     validateError?: ValidateProfileError[];
 }
+export { ValidateProfileError };

@@ -6,9 +6,10 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback } from 'react';
 import { getUserAuthData } from 'entities/User';
 import { HStack } from 'shared/UI/Stack';
-import {
-    getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from 'features/editableProfileCard';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { profileActions } from '../../model/slice/profileSlice';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 
 interface ProfilePageHeaderProps {
   className?: string;

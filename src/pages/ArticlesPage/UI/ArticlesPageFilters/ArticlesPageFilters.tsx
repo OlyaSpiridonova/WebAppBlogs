@@ -9,6 +9,7 @@ import {
     ArticleSortSelector,
     ArticleSortField,
     ArticleTypeTabs,
+    ArticleType,
 } from 'entities/Article';
 import { useSelector } from 'react-redux';
 import { Card } from 'shared/UI/Card/Card';
@@ -16,7 +17,6 @@ import { Input } from 'shared/UI/Input/Input';
 import { SortOrder } from 'shared/types';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem } from 'shared/UI/Tabs/Tabs';
-import { ArticleType } from 'entities/Article/model/types/article';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import {
     getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType, getArticlePageView,

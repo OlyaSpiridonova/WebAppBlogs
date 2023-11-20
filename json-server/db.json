@@ -620,28 +620,34 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNAUe6jRZ_5QLveAzu0Ap1GpVs8boSa7TJUlEU6whBZcA6WeqdgFaaEUvsCOCydgP4XSE&usqp=CAU"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://w7.pngwing.com/pngs/641/941/png-transparent-avatar-face-female-people-profile-user-woman-avatar-user-icon.png"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://w7.pngwing.com/pngs/641/941/png-transparent-avatar-face-female-people-profile-user-woman-avatar-user-icon.png"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "user",
+      "first": "user1",
       "lastname": "Spiridonova",
       "age": 23,
       "currency": "RUB",

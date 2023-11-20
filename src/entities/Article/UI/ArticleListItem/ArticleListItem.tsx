@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Text } from 'shared/UI/Text/Text';
 import { Icon } from 'shared/UI/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
@@ -10,9 +10,8 @@ import { Button, ButtonTheme } from 'shared/UI/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/UI/AppLink/AppLink';
 import cls from './ArticleListItem.module.scss';
-import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
-} from '../../model/types/article';
+import { Article, ArticleTextBlock } from '../../model/types/article';
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleListItemProps {

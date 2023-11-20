@@ -6,7 +6,7 @@ import { AppRoutesProps, routeConfig } from 'shared/config/routeConfig/routeConf
 import { PageLoader } from 'shared/UI/PageLoader/PageLoader';
 import { RequireAuth } from './RequireAuth';
 
-const AppRouter = () => {
+export const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
         const element = (
             <Suspense fallback={<PageLoader />}>

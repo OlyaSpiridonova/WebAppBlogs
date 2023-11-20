@@ -1,5 +1,5 @@
 export { articlePageAction, articlePageReducer } from './model/slice/articlePageSlice';
-export { ArticlesPageSchema } from './model/types/articlesPageSchema';
+export type { ArticlesPageSchema } from './model/types/articlesPageSchema';
 
 export {
     ArticlesPageAsync as ArticlesPage,
