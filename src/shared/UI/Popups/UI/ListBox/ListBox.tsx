@@ -3,8 +3,10 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropDownDirections } from 'shared/types/ui';
 import cls from './ListBox.module.scss';
-import { Button, ButtonTheme } from '../Button/Button';
-import { HStack } from '../Stack';
+import { Button, ButtonTheme } from '../../../Button/Button';
+import { HStack } from '../../../Stack';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface ListBoxItem {
     value: string;
@@ -22,13 +24,6 @@ export interface ListBoxProps {
     readonly?: boolean;
     direction?: DropDownDirections;
 }
-
-const mapDirectionClass: Record<DropDownDirections, string> = {
-    bottomLeft: cls.optionsBottomLeft,
-    bottomRight: cls.optionsBottomRight,
-    topLeft: cls.optionsTopLeft,
-    topRight: cls.optionsTopRight,
-};
 
 export function ListBox(props:ListBoxProps) {
     const {
@@ -49,7 +44,7 @@ export function ListBox(props:ListBoxProps) {
             {label && <span>{`${label}>`}</span>}
             <HListBox
                 as="div"
-                className={classNames(cls.ListBox, {}, [className])}
+                className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
@@ -57,7 +52,7 @@ export function ListBox(props:ListBoxProps) {
 
                 <HListBox.Button
                     as="div"
-                    className={cls.trigger}
+                    className={popupCls.trigger}
                 >
                     <Button
                         theme={ButtonTheme.OUTLINE}
@@ -78,7 +73,7 @@ export function ListBox(props:ListBoxProps) {
                                 <li
                                     className={classNames(
                                         cls.item,
-                                        { [cls.active]: active, [cls.disabled]: item.disabled },
+                                        { [popupCls.active]: active, [popupCls.disabled]: item.disabled },
                                         [],
                                     )}
                                     key={item.value}

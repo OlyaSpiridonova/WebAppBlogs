@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ChangeEvent, memo, useCallback } from 'react';
 import { Select } from 'shared/UI/Select/Select';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from 'shared/UI/ListBox/ListBox';
+import { ListBox } from 'shared/UI/Popups/UI/ListBox/ListBox';
 import cls from './CurrencySelect.module.scss';
 import { Currency } from '../../model/types/currency';
 
