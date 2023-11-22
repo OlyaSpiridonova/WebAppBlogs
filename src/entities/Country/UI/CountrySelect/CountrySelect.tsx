@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Country } from 'entities/Country/model/types/country';
-import { ListBox } from 'shared/UI/Popups/UI/ListBox/ListBox';
+import { Country } from '@/entities/Country/model/types/country';
+import { ListBox } from '@/shared/UI/Popups/UI/ListBox/ListBox';
 import cls from './CurrencySelect.module.scss';
 
 interface CountrySelectProps {

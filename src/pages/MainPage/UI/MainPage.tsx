@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { HStack } from 'shared/UI/Stack';
-import { Page } from 'widgets/Page/Page';
+import { HStack } from '@/shared/UI/Stack';
+import { Page } from '@/widgets/Page/Page';
 
 const MainPage = () => {
     const { t } = useTranslation();
