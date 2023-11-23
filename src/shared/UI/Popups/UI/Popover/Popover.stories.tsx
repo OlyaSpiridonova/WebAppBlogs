@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { Popover } from './Popover';
+import { Button } from '@/shared/UI/Button/Button';
 
 export default {
     title: 'shared/Popups/Popover',
@@ -14,12 +15,24 @@ export default {
 const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+    trigger: <Button>Open</Button>,
+    children: <Button>Menu</Button>,
+    direction: 'bottomLeft',
+};
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {
+    trigger: <Button>Open</Button>,
+    children: <Button>Menu</Button>,
+    direction: 'bottomLeft',
+};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Orange = Template.bind({});
-Orange.args = {};
+Orange.args = {
+    trigger: <Button>Open</Button>,
+    children: <Button>Menu</Button>,
+    direction: 'bottomLeft',
+};
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

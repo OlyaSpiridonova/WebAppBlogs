@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import withMock from 'storybook-addon-mock';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleRecomendationsList } from './ArticleRecomendationsList';
+import TestIcon from '@/shared/assets/icons/jsTest.jpg';
 
 export default {
     title: 'features/ArticleRecomendationsList',
@@ -16,7 +17,7 @@ export default {
 const Template: ComponentStory<typeof ArticleRecomendationsList> = (args) => <ArticleRecomendationsList {...args} />;
 const article = {
     id: '1',
-    img: 'https://itproger.com/img/courses/1476977754.jpg',
+    img: TestIcon,
     createdAt: '',
     views: 10000,
     user: { id: '1', username: '123' },
