@@ -9,11 +9,11 @@ import {
 } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/UI/Text/Text';
 import { AppLink, AppLinkTheme } from '@/shared/UI/AppLink/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { HStack } from '@/shared/UI/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import cls from './Navbar.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;

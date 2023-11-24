@@ -8,7 +8,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Dropdown } from '@/shared/UI/Popups';
 import { Avatar } from '@/shared/UI/Avatar/Avatar';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
   className?: string;
