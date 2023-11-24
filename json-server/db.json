@@ -1,36 +1,36 @@
 {
   "notifications": [
     {
-    "id": "1",
-    "title": "Уведомление 1",
-    "description": "Произошло какое-то событие",
-    "userId": "1"
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
     },
     {
-    "id": "2",
-    "title": "Уведомление 2",
-    "description": "Произошло какое-то событие",
-    "userId": "1",
-    "href": "http://localhost:3000/admin"
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
     },
     {
-    "id": "3",
-    "title": "Уведомление 3",
-    "description": "Произошло какое-то событие",
-    "userId": "1",
-    "href": "http://localhost:3000/admin"
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
     },
     {
-    "id": "4",
-    "title": "Уведомление 4",
-    "description": "Произошло какое-то событие",
-    "userId": "1"
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
     },
     {
-    "id": "5",
-    "title": "Уведомление 1",
-    "description": "Произошло какое-то событие",
-    "userId": "2"
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "2"
     }
   ],
   "posts": [
@@ -699,7 +699,91 @@
       "country": "Russia",
       "city": "Moscow",
       "username": "user",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNAUe6jRZ_5QLveAzu0Ap1GpVs8boSa7TJUlEU6whBZcA6WeqdgFaaEUvsCOCydgP4XSE&usqp=CAU"
+      "avatar": "https://img.myloview.ru/canvas-prints/profile-icon-vector-male-user-person-avatar-in-flat-color-glyph-pictogram-illustration-700-121123314.jpg"
+    },
+    {
+      "id": "3",
+      "first": "Kate",
+      "lastname": "Frontend",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "manager",
+      "avatar": "https://w7.pngwing.com/pngs/641/941/png-transparent-avatar-face-female-people-profile-user-woman-avatar-user-icon.png"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 5,
+      "feedback": "Отличная статья, много полезного и нового узнал",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья!",
+      "userId": "2",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "2",
+      "rate": 3,
+      "feedback": "Неплохая статья",
+      "id": "91iMc9d"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 5,
+      "id": "QZnUI7m"
+    },
+    {
+      "userId": "2",
+      "articleId": "3",
+      "rate": 5,
+      "feedback": "Топ статья",
+      "id": "KL5KNQS"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "rate": 1,
+      "feedback": "",
+      "id": "aotoGdo"
+    },
+    {
+      "userId": "2",
+      "articleId": "5",
+      "rate": 5,
+      "feedback": "Классная статья!!!",
+      "id": "o4vMTEV"
+    },
+    {
+      "userId": "2",
+      "articleId": "10",
+      "rate": 4,
+      "feedback": "Хорошая статья! Но можно и лучше",
+      "id": "o3NUeP4"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 5,
+      "feedback": "Интересный профиль!",
+      "userId": "2",
+      "profileId": "1"
+    },
+    {
+      "userId": "1",
+      "profileId": "2",
+      "rate": 5,
+      "feedback": "Хороший профиль",
+      "id": "mVaUojh"
     }
   ]
 }
