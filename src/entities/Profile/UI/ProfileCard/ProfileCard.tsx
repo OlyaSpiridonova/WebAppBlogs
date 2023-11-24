@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextAlign, TextTheme } from '@/shared/UI/Text/Text';
 import { Input } from '@/shared/UI/Input/Input';
-import { Profile } from '@/entities/Profile/model/types/profile';
+import { Profile } from '../../model/types/profile';
 import { Loader } from '@/shared/UI/Loader/Loader';
 import { Avatar } from '@/shared/UI/Avatar/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';

@@ -3,14 +3,14 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { initArticlesPage } from '@/pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ArticleList } from '@/entities/Article';
-import { getArticles } from '@/pages/ArticlesPage/model/slice/articlePageSlice';
 import { Text } from '@/shared/UI/Text/Text';
 import {
     getArticlePageError, getArticlePageIsLoading, getArticlePageView,
 } from '../../model/selectors/articlePageSelector';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { getArticles } from '../../model/slice/articlePageSlice';
 
 interface ArticleInfiniteListProps {
   className?: string;

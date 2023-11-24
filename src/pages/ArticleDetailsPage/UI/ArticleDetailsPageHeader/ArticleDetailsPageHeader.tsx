@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Button, ButtonTheme } from '@/shared/UI/Button/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { getCanEditAricle } from '@/pages/ArticleDetailsPage/model/selectors/article';
 import { getArticleDetailsData } from '@/entities/Article';
 import cls from './ArticleDetailsPageHeader.module.scss';
+import { getCanEditAricle } from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
