@@ -2,13 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/UI/Button/Button';
+import { Button, ButtonTheme } from '@/shared/UI/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import {
     getUserAuthData,
 } from '@/entities/User';
-import { Text, TextTheme } from '@/shared/UI/Text/Text';
-import { AppLink, AppLinkTheme } from '@/shared/UI/AppLink/AppLink';
+import { Text, TextTheme } from '@/shared/UI/Text';
+import { AppLink, AppLinkTheme } from '@/shared/UI/AppLink';
 import { HStack } from '@/shared/UI/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';

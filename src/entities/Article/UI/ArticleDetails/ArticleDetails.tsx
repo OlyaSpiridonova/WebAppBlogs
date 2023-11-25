@@ -4,12 +4,12 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, TextAlign, TextSize } from '@/shared/UI/Text/Text';
-import { Skeleton } from '@/shared/UI/Skeleton/Skeleton';
-import { Avatar } from '@/shared/UI/Avatar/Avatar';
+import { Text, TextAlign, TextSize } from '@/shared/UI/Text';
+import { Skeleton } from '@/shared/UI/Skeleton';
+import { Avatar } from '@/shared/UI/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
-import { Icon } from '@/shared/UI/Icon/Icon';
+import { Icon } from '@/shared/UI/Icon';
 import { HStack, VStack } from '@/shared/UI/Stack';
 import { ArticleBlock } from '../../model/types/article';
 import {

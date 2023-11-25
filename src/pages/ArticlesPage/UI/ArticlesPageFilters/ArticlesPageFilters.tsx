@@ -11,11 +11,11 @@ import {
     ArticleTypeTabs,
     ArticleType,
 } from '@/entities/Article';
-import { Card } from '@/shared/UI/Card/Card';
-import { Input } from '@/shared/UI/Input/Input';
+import { Card } from '@/shared/UI/Card';
+import { Input } from '@/shared/UI/Input';
 import { SortOrder } from '@/shared/types';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem } from '@/shared/UI/Tabs/Tabs';
+import { TabItem } from '@/shared/UI/Tabs';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import {
     getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType, getArticlePageView,

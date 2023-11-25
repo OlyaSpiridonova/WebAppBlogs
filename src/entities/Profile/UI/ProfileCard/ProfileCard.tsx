@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextAlign, TextTheme } from '@/shared/UI/Text/Text';
-import { Input } from '@/shared/UI/Input/Input';
+import { Text, TextAlign, TextTheme } from '@/shared/UI/Text';
+import { Input } from '@/shared/UI/Input';
 import { Profile } from '../../model/types/profile';
-import { Loader } from '@/shared/UI/Loader/Loader';
-import { Avatar } from '@/shared/UI/Avatar/Avatar';
+import { Loader } from '@/shared/UI/Loader';
+import { Avatar } from '@/shared/UI/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
 import { HStack, VStack } from '@/shared/UI/Stack';

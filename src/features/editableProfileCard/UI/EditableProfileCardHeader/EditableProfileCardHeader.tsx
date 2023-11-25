@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import { Text } from '@/shared/UI/Text/Text';
-import { Button, ButtonTheme } from '@/shared/UI/Button/Button';
+import { Text } from '@/shared/UI/Text';
+import { Button, ButtonTheme } from '@/shared/UI/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
 import { HStack } from '@/shared/UI/Stack';

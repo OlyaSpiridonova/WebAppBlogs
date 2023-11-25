@@ -7,7 +7,7 @@ import {
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Dropdown } from '@/shared/UI/Popups';
-import { Avatar } from '@/shared/UI/Avatar/Avatar';
+import { Avatar } from '@/shared/UI/Avatar';
 import { RoutePath } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
