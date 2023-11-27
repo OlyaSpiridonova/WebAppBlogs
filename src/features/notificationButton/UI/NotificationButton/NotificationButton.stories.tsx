@@ -1,8 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { NotificationButton } from './NotificationButton';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'features/NotificationButton',
@@ -19,11 +17,3 @@ const Template: ComponentStory<typeof NotificationButton> = (args) => <Notificat
 
 export const Normal = Template.bind({});
 Normal.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Orange = Template.bind({});
-Orange.args = {};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

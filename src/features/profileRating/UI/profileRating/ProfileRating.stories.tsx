@@ -1,9 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import withMock from 'storybook-addon-mock';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import ProfileRating from './ProfileRating';
-import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'features/ProfileRating',
@@ -23,11 +21,11 @@ export default {
 
 const Template: ComponentStory<typeof ProfileRating> = (args) => <ProfileRating {...args} />;
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const WithRate = Template.bind({});
+WithRate.args = {
     profileId: '1',
 };
-Normal.parameters = {
+WithRate.parameters = {
     mockData: [
         {
             url: `${__API__}/profile-ratings?userId=1&profileId=1`,
@@ -38,34 +36,17 @@ Normal.parameters = {
     ],
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
+export const WithoutRate = Template.bind({});
+WithoutRate.args = {
     profileId: '2',
 };
-Dark.parameters = {
+WithoutRate.parameters = {
     mockData: [
         {
             url: `${__API__}/profile-ratings?userId=1&profileId=1`,
             method: 'GET',
             status: 200,
-            response: [{ rate: 0, feedback: 'feedback' }],
+            response: [],
         },
     ],
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Orange = Template.bind({});
-Orange.args = {
-    profileId: '3',
-};
-Orange.parameters = {
-    mockData: [
-        {
-            url: `${__API__}/profile-ratings?userId=1&profileId=1`,
-            method: 'GET',
-            status: 200,
-            response: [{ rate: 2, feedback: 'feedback' }],
-        },
-    ],
-};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

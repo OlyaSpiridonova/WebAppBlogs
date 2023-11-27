@@ -1,9 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import withMock from 'storybook-addon-mock';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import ArticleRating from './ArticleRating';
-import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'features/ArticleRating',
@@ -38,34 +36,17 @@ Normal.parameters = {
     ],
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
+export const WithoutRate = Template.bind({});
+WithoutRate.args = {
     articleId: '2',
 };
-Dark.parameters = {
+WithoutRate.parameters = {
     mockData: [
         {
             url: `${__API__}/article-ratings?userId=1&articleId=1`,
             method: 'GET',
             status: 200,
-            response: [{ rate: 5, feedback: 'feedback' }],
+            response: [],
         },
     ],
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Orange = Template.bind({});
-Orange.args = {
-    articleId: '3',
-};
-Orange.parameters = {
-    mockData: [
-        {
-            url: `${__API__}/article-ratings?userId=1&articleId=1`,
-            method: 'GET',
-            status: 200,
-            response: [{ rate: 2, feedback: 'feedback' }],
-        },
-    ],
-};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

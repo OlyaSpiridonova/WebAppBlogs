@@ -1,9 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { ArticleBlockType, ArticleType, ArticleView } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticlesPage from './ArticlesPage';
-import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'pages/ArticlesPage',
@@ -152,11 +150,3 @@ const articles = {
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [StoreDecorator(articles)];
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(articles)];
-
-export const Orange = Template.bind({});
-Orange.args = {};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator(articles)];
