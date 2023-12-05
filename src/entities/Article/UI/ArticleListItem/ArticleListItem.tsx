@@ -13,6 +13,8 @@ import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/UI/AppImage';
+import { Skeleton } from '@/shared/UI/Skeleton';
 
 interface ArticleListItemProps {
   className?: string;
@@ -46,7 +48,12 @@ export const ArticleListItem = memo((props : ArticleListItemProps) => {
                     </div>
                     <Text title={article.title} className={cls.title} />
                     {types}
-                    <img src={article.img} alt={article.title} className={cls.image} />
+                    <AppImage
+                        fallback={<Skeleton width="100%" height={250} />}
+                        src={article.img}
+                        alt={article.title}
+                        className={cls.image}
+                    />
                     {textBlock && (
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     )}
@@ -72,7 +79,12 @@ export const ArticleListItem = memo((props : ArticleListItemProps) => {
         >
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
-                    <img className={cls.image} src={article.img} alt={article.title} />
+                    <AppImage
+                        fallback={(<Skeleton width={200} height={200} />)}
+                        className={cls.image}
+                        src={article.img}
+                        alt={article.title}
+                    />
                     <Text text={article.createdAt} className={cls.date} />
                 </div>
                 <div className={cls.infoWrapper}>
