@@ -10,7 +10,7 @@ import {
 } from '@/entities/Article';
 import { Card } from '@/shared/UI/Card';
 import { Input } from '@/shared/UI/Input';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem } from '@/shared/UI/Tabs';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';

@@ -24,7 +24,7 @@ const ProfilePage = (props: ProfilePageProps) => {
     }
 
     return (
-        <Page className={classNames('', {}, [])}>
+        <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
             <VStack max gap="16">
                 <EditableProfileCard id={id} />
                 {isVisibleRating && <ProfileRating profileId={id} />}
