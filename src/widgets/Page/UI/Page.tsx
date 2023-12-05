@@ -11,7 +11,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
-import { TestProps } from '@/shared/types/test';
+import { TestProps } from '@/shared/types/testTypes';
 
 interface PageProps extends TestProps{
   className?: string;
