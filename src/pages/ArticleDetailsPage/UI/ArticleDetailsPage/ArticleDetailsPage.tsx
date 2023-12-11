@@ -14,6 +14,7 @@ import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
+import { getFeatureFlags } from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -26,6 +27,7 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article-details');
     const { id } = useParams();
+    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
 
     if (!id) {
         return null;
@@ -36,7 +38,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             <Page className={classNames(cls.ArticleDetailsPage)}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
+                {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                 <ArticleRecomendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>
