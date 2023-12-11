@@ -6,9 +6,9 @@ import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 
 interface CommentListProps {
-  className?: string;
-  comments?: Comment[];
-  isLoading?: boolean;
+    className?: string;
+    comments?: Comment[];
+    isLoading?: boolean;
 }
 
 export const CommentList = memo((props: CommentListProps) => {
@@ -22,14 +22,21 @@ export const CommentList = memo((props: CommentListProps) => {
                 <CommentCard isLoading />
                 <CommentCard isLoading />
             </VStack>
-
         );
     }
     return (
         <VStack gap="16" max>
-            {comments?.length ? comments.map((comment) => (
-                <CommentCard comment={comment} isLoading={isLoading} key={comment.id} />
-            )) : <Text text={t('Комментарии отсутствуют')} />}
+            {comments?.length ? (
+                comments.map((comment) => (
+                    <CommentCard
+                        comment={comment}
+                        isLoading={isLoading}
+                        key={comment.id}
+                    />
+                ))
+            ) : (
+                <Text text={t('Комментарии отсутствуют')} />
+            )}
         </VStack>
     );
 });

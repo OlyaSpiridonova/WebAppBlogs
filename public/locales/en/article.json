@@ -1,14 +1,14 @@
 {
-  "Статьи": "Articles",
-  "Сортировать ПО": "Sort by",
-  "по": "by",
-  "возрастанию": "increasing",
-  "убыванию": "descending",
-  "дате создания": "date creation",
-  "названию": "name",
-  "просмотрам": "views",
-  "Все статьи": "All articles",
-  "IT": "IT",
-  "Экономика": "Economy",
-  "Наука": "Science"
+    "Статьи": "Articles",
+    "Сортировать ПО": "Sort by",
+    "по": "by",
+    "возрастанию": "increasing",
+    "убыванию": "descending",
+    "дате создания": "date creation",
+    "названию": "name",
+    "просмотрам": "views",
+    "Все статьи": "All articles",
+    "IT": "IT",
+    "Экономика": "Economy",
+    "Наука": "Science"
 }

@@ -19,7 +19,6 @@ row.args = {
             <div>first</div>
             <div>first</div>
             <div>first</div>
-
         </>
     ),
 };
@@ -32,7 +31,6 @@ column.args = {
             <div>first</div>
             <div>first</div>
             <div>first</div>
-
         </>
     ),
     direction: 'column',
@@ -46,7 +44,6 @@ rowGap4.args = {
             <div>first</div>
             <div>first</div>
             <div>first</div>
-
         </>
     ),
     gap: '4',
@@ -60,7 +57,6 @@ rowGap8.args = {
             <div>first</div>
             <div>first</div>
             <div>first</div>
-
         </>
     ),
     gap: '8',
@@ -74,7 +70,6 @@ rowGap16.args = {
             <div>first</div>
             <div>first</div>
             <div>first</div>
-
         </>
     ),
     gap: '16',
@@ -88,7 +83,6 @@ columnAlignCenter.args = {
             <div>first</div>
             <div>first</div>
             <div>first</div>
-
         </>
     ),
     direction: 'column',
@@ -104,7 +98,6 @@ rowJustifyCenter.args = {
             <div>first</div>
             <div>first</div>
             <div>first</div>
-
         </>
     ),
     justify: 'center',

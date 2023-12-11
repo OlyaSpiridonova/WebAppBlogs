@@ -1,5 +1,3 @@
 import { NotFoundPage } from './UI/NotFoundPage';
 
-export {
-    NotFoundPage,
-};
+export { NotFoundPage };

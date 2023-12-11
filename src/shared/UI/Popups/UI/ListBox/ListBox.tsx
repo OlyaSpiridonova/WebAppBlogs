@@ -25,7 +25,7 @@ export interface ListBoxProps {
     direction?: DropDownDirections;
 }
 
-export function ListBox(props:ListBoxProps) {
+export function ListBox(props: ListBoxProps) {
     const {
         className,
         items,
@@ -44,46 +44,48 @@ export function ListBox(props:ListBoxProps) {
             {label && <span>{`${label}>`}</span>}
             <HListBox
                 as="div"
-                className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
+                className={classNames(cls.ListBox, {}, [
+                    className,
+                    popupCls.popup,
+                ])}
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
             >
-
-                <HListBox.Button
-                    as="div"
-                    className={popupCls.trigger}
-                >
-                    <Button
-                        theme={ButtonTheme.OUTLINE}
-                        disabled={readonly}
-                    >
+                <HListBox.Button as="div" className={popupCls.trigger}>
+                    <Button theme={ButtonTheme.OUTLINE} disabled={readonly}>
                         {value ?? defaultValue}
                     </Button>
                 </HListBox.Button>
-                <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
-                    {items && items.map((item) => (
-                        <HListBox.Option
-                            as={Fragment}
-                            key={item.value}
-                            value={item.value}
-                            disabled={item.disabled}
-                        >
-                            {({ active, selected }) => (
-                                <li
-                                    className={classNames(
-                                        cls.item,
-                                        { [popupCls.active]: active, [popupCls.disabled]: item.disabled },
-                                        [],
-                                    )}
-                                    key={item.value}
-                                >
-                                    {item.content}
-                                </li>
-                            )}
-
-                        </HListBox.Option>
-                    ))}
+                <HListBox.Options
+                    className={classNames(cls.options, {}, optionsClasses)}
+                >
+                    {items &&
+                        items.map((item) => (
+                            <HListBox.Option
+                                as={Fragment}
+                                key={item.value}
+                                value={item.value}
+                                disabled={item.disabled}
+                            >
+                                {({ active, selected }) => (
+                                    <li
+                                        className={classNames(
+                                            cls.item,
+                                            {
+                                                [popupCls.active]: active,
+                                                [popupCls.disabled]:
+                                                    item.disabled,
+                                            },
+                                            [],
+                                        )}
+                                        key={item.value}
+                                    >
+                                        {item.content}
+                                    </li>
+                                )}
+                            </HListBox.Option>
+                        ))}
                 </HListBox.Options>
             </HListBox>
         </HStack>

@@ -11,19 +11,19 @@ import { HStack, VStack } from '@/shared/UI/Stack';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
-  className?: string;
-  data?: Profile;
-  isLoading?: boolean;
-  error?: string;
-  readonly?: boolean;
-  onChangeFirstname?: (value?: string) => void;
-  onChangeLastname?: (value?: string) => void;
-  onChangeAge?: (value?: string) => void;
-  onChangeCity?: (value?: string) => void;
-  onChangeUsername?: (value?: string) => void;
-  onChangeAvatar?: (value?: string) => void;
-  onChangeCurrency?: (currency: Currency) => void;
-  onChangeCountry?: (currency: Country) => void;
+    className?: string;
+    data?: Profile;
+    isLoading?: boolean;
+    error?: string;
+    readonly?: boolean;
+    onChangeFirstname?: (value?: string) => void;
+    onChangeLastname?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (currency: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -46,7 +46,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <HStack max justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.loader])}>
+            <HStack
+                max
+                justify="center"
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loader,
+                ])}
+            >
                 <Loader />
             </HStack>
         );
@@ -54,7 +61,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (error) {
         return (
-            <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack
+                justify="center"
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     align={TextAlign.CENTER}
@@ -70,10 +83,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <VStack max gap="8" className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack
+            max
+            gap="8"
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
             {data?.avatar && (
                 <HStack justify="center" max>
-                    <Avatar src={data?.avatar} alt={data?.username} size={150} />
+                    <Avatar
+                        src={data?.avatar}
+                        alt={data?.username}
+                        size={150}
+                    />
                 </HStack>
             )}
             <Input
@@ -91,7 +112,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 onChange={onChangeLastname}
                 readonly={readonly}
                 data-testid="ProfileCard.lastname"
-
             />
             <Input
                 value={data?.age}

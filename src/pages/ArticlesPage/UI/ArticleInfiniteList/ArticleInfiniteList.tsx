@@ -7,40 +7,42 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { ArticleList } from '@/entities/Article';
 import { Text } from '@/shared/UI/Text';
 import {
-    getArticlePageError, getArticlePageIsLoading, getArticlePageView,
+    getArticlePageError,
+    getArticlePageIsLoading,
+    getArticlePageView,
 } from '../../model/selectors/articlePageSelector';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { getArticles } from '../../model/slice/articlePageSlice';
 
 interface ArticleInfiniteListProps {
-  className?: string;
+    className?: string;
 }
 
-export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps) => {
-    const { t } = useTranslation('');
-    const dispatch = useAppDispatch();
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlePageIsLoading);
-    const view = useSelector(getArticlePageView);
-    const [searchParams] = useSearchParams();
-    const error = useSelector(getArticlePageError);
+export const ArticleInfiniteList = memo(
+    ({ className }: ArticleInfiniteListProps) => {
+        const { t } = useTranslation('');
+        const dispatch = useAppDispatch();
+        const articles = useSelector(getArticles.selectAll);
+        const isLoading = useSelector(getArticlePageIsLoading);
+        const view = useSelector(getArticlePageView);
+        const [searchParams] = useSearchParams();
+        const error = useSelector(getArticlePageError);
 
-    useInitialEffect(() => {
-        dispatch(initArticlesPage(searchParams));
-    });
+        useInitialEffect(() => {
+            dispatch(initArticlesPage(searchParams));
+        });
 
-    if (error) {
+        if (error) {
+            return <Text title={t('Произошла ошибка при загрузке статей')} />;
+        }
+
         return (
-            <Text title={t('Произошла ошибка при загрузке статей')} />
+            <ArticleList
+                className={className}
+                isLoading={isLoading}
+                view={view}
+                articles={articles}
+            />
         );
-    }
-
-    return (
-        <ArticleList
-            className={className}
-            isLoading={isLoading}
-            view={view}
-            articles={articles}
-        />
-    );
-});
+    },
+);

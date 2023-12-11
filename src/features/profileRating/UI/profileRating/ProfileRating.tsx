@@ -2,13 +2,16 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { RatingCard } from '@/entities/Rating';
-import { useGetProfileRating, useRateProfile } from '../../api/profileRatingApi';
+import {
+    useGetProfileRating,
+    useRateProfile,
+} from '../../api/profileRatingApi';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/UI/Skeleton';
 
 export interface ProfileRatingProps {
-  className?: string;
-  profileId: string;
+    className?: string;
+    profileId: string;
 }
 
 const ProfileRating = memo((props: ProfileRatingProps) => {
@@ -21,31 +24,38 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
     });
     const [rateProfileMutation] = useRateProfile();
 
-    const handleRateProfile = useCallback((startsCount: number, feedback?: string) => {
-        try {
-            rateProfileMutation({
-                userId: userData?.id ?? '',
-                profileId,
-                rate: startsCount,
-                feedback,
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    }, [profileId, rateProfileMutation, userData?.id]);
+    const handleRateProfile = useCallback(
+        (startsCount: number, feedback?: string) => {
+            try {
+                rateProfileMutation({
+                    userId: userData?.id ?? '',
+                    profileId,
+                    rate: startsCount,
+                    feedback,
+                });
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        [profileId, rateProfileMutation, userData?.id],
+    );
 
-    const onAccept = useCallback((startsCount: number, feedback?: string) => {
-        handleRateProfile(startsCount, feedback);
-    }, [handleRateProfile]);
+    const onAccept = useCallback(
+        (startsCount: number, feedback?: string) => {
+            handleRateProfile(startsCount, feedback);
+        },
+        [handleRateProfile],
+    );
 
-    const onCancel = useCallback((startsCount: number) => {
-        handleRateProfile(startsCount);
-    }, [handleRateProfile]);
+    const onCancel = useCallback(
+        (startsCount: number) => {
+            handleRateProfile(startsCount);
+        },
+        [handleRateProfile],
+    );
 
     if (isLoading) {
-        return (
-            <Skeleton width="100%" height={120} />
-        );
+        return <Skeleton width="100%" height={120} />;
     }
     const rating = data?.[0];
 

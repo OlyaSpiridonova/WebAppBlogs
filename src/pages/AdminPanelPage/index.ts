@@ -1,5 +1,3 @@
 import { AdminPanelPageAsync } from './UI/AdminPanelPage.async';
 
-export {
-    AdminPanelPageAsync as AdminPanelPage,
-};
+export { AdminPanelPageAsync as AdminPanelPage };

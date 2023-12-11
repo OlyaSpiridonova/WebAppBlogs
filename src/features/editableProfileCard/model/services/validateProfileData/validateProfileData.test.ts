@@ -21,38 +21,32 @@ describe('validateProfileData.test', () => {
     });
 
     test('incorrect user data', () => {
-        const result = validateProfileData({ ...data, first: '', lastname: '' });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_USER_DATA,
-        ]);
+        const result = validateProfileData({
+            ...data,
+            first: '',
+            lastname: '',
+        });
+        expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
     });
 
     test('incorrect age', () => {
         const result = validateProfileData({ ...data, age: undefined });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_AGE,
-        ]);
+        expect(result).toEqual([ValidateProfileError.INCORRECT_AGE]);
     });
 
     test('incorrect avatar', () => {
         const result = validateProfileData({ ...data, avatar: '' });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_AVATAR,
-        ]);
+        expect(result).toEqual([ValidateProfileError.INCORRECT_AVATAR]);
     });
 
     test('incorrect city', () => {
         const result = validateProfileData({ ...data, city: '' });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_CITY,
-        ]);
+        expect(result).toEqual([ValidateProfileError.INCORRECT_CITY]);
     });
 
     test('incorrect username', () => {
         const result = validateProfileData({ ...data, username: '' });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_USERNAME,
-        ]);
+        expect(result).toEqual([ValidateProfileError.INCORRECT_USERNAME]);
     });
 
     test('incorrect data', () => {

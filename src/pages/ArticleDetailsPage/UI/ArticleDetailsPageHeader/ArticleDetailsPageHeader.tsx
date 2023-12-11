@@ -10,42 +10,45 @@ import { getCanEditAricle } from '../../model/selectors/article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
-  className?: string;
+    className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageHeaderProps) => {
-    const { t } = useTranslation('');
-    const navigate = useNavigate();
-    const article = useSelector(getArticleDetailsData);
-    const canEdit = useSelector(getCanEditAricle);
+export const ArticleDetailsPageHeader = memo(
+    ({ className }: ArticleDetailsPageHeaderProps) => {
+        const { t } = useTranslation('');
+        const navigate = useNavigate();
+        const article = useSelector(getArticleDetailsData);
+        const canEdit = useSelector(getCanEditAricle);
 
-    const onBackToList = useCallback(() => {
-        navigate(getRouteArticles());
-    }, [navigate]);
+        const onBackToList = useCallback(() => {
+            navigate(getRouteArticles());
+        }, [navigate]);
 
-    const onEditArticle = useCallback(() => {
-        if (article) {
-            navigate(getRouteArticleEdit(article.id));
-        }
-    }, [navigate, article]);
+        const onEditArticle = useCallback(() => {
+            if (article) {
+                navigate(getRouteArticleEdit(article.id));
+            }
+        }, [navigate, article]);
 
-    return (
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
-            <Button
-                theme={ButtonTheme.OUTLINE}
-                onClick={onBackToList}
+        return (
+            <div
+                className={classNames(cls.ArticleDetailsPageHeader, {}, [
+                    className,
+                ])}
             >
-                {t('Вернуться к списку')}
-            </Button>
-            {canEdit && (
-                <Button
-                    className={cls.ediBtn}
-                    theme={ButtonTheme.OUTLINE}
-                    onClick={onEditArticle}
-                >
-                    {t('Редактировать')}
+                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+                    {t('Вернуться к списку')}
                 </Button>
-            )}
-        </div>
-    );
-});
+                {canEdit && (
+                    <Button
+                        className={cls.ediBtn}
+                        theme={ButtonTheme.OUTLINE}
+                        onClick={onEditArticle}
+                    >
+                        {t('Редактировать')}
+                    </Button>
+                )}
+            </div>
+        );
+    },
+);

@@ -15,7 +15,7 @@ interface ProfilePageProps {
 const ProfilePage = (props: ProfilePageProps) => {
     const { className } = props;
     const { t } = useTranslation('profile');
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
     const authData = useSelector(getUserAuthData);
     const isVisibleRating = authData?.id !== id;
 
@@ -24,7 +24,10 @@ const ProfilePage = (props: ProfilePageProps) => {
     }
 
     return (
-        <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
+        <Page
+            data-testid="ProfilePage"
+            className={classNames('', {}, [className])}
+        >
             <VStack max gap="16">
                 <EditableProfileCard id={id} />
                 {isVisibleRating && <ProfileRating profileId={id} />}

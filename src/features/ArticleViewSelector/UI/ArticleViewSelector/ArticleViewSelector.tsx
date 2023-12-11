@@ -9,9 +9,9 @@ import { ArticleView } from '../../../../entities/Article/model/consts/articleCo
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
-  className?: string;
-  view?: ArticleView;
-  onViewClick: (view: ArticleView) => void;
+    className?: string;
+    view?: ArticleView;
+    onViewClick: (view: ArticleView) => void;
 }
 
 const viewTypes = [
@@ -23,7 +23,6 @@ const viewTypes = [
         view: ArticleView.BIG,
         icon: ListIcon,
     },
-
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
@@ -45,7 +44,11 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                 >
                     <Icon
                         Svg={item.icon}
-                        className={classNames('', { [cls.notSelected]: item.view !== view }, [])}
+                        className={classNames(
+                            '',
+                            { [cls.notSelected]: item.view !== view },
+                            [],
+                        )}
                     />
                 </Button>
             ))}

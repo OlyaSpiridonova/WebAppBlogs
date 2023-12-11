@@ -14,7 +14,9 @@ export default {
     decorators: [withMock],
 } as ComponentMeta<typeof ArticleRecomendationsList>;
 
-const Template: ComponentStory<typeof ArticleRecomendationsList> = (args) => <ArticleRecomendationsList {...args} />;
+const Template: ComponentStory<typeof ArticleRecomendationsList> = (args) => (
+    <ArticleRecomendationsList {...args} />
+);
 const article = {
     id: '1',
     img: TestIcon,
@@ -40,7 +42,6 @@ Normal.parameters = {
                 { ...article, id: '2' },
                 { ...article, id: '3' },
             ],
-
         },
     ],
 };

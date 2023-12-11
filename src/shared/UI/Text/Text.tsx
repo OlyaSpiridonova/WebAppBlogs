@@ -11,13 +11,13 @@ export enum TextTheme {
 export enum TextAlign {
     RIGHT = 'right',
     LEFT = 'left',
-    CENTER = 'center'
+    CENTER = 'center',
 }
 
 export enum TextSize {
     S = 'size_s',
     M = 'size_m',
-    L = 'size_l'
+    L = 'size_l',
 }
 
 interface TextProps {
@@ -29,16 +29,14 @@ interface TextProps {
     size?: TextSize;
 
     'data-testid'?: string;
-
 }
 
-type HeaderTagType = 'h1'| 'h2'| 'h3';
+type HeaderTagType = 'h1' | 'h2' | 'h3';
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.S]: 'h1',
     [TextSize.M]: 'h2',
     [TextSize.L]: 'h3',
-
 };
 
 export const Text = memo((props: TextProps) => {
@@ -71,13 +69,8 @@ export const Text = memo((props: TextProps) => {
                 </HeaderTag>
             )}
             {text && (
-                <p
-                    className={cls.text}
-                    data-testid={`${dataTestId}.Paragraph`}
-
-                >
+                <p className={cls.text} data-testid={`${dataTestId}.Paragraph`}>
                     {text}
-
                 </p>
             )}
         </div>

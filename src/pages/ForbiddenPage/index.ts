@@ -1,5 +1,3 @@
 import { ForbiddenPageAsync } from './UI/ForbiddenPage.async';
 
-export {
-    ForbiddenPageAsync as ForbiddenPage,
-};
+export { ForbiddenPageAsync as ForbiddenPage };

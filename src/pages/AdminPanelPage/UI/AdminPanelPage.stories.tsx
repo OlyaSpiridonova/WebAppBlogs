@@ -10,7 +10,9 @@ export default {
     },
 } as ComponentMeta<typeof AdminPanelPage>;
 
-const Template: ComponentStory<typeof AdminPanelPage> = () => <AdminPanelPage />;
+const Template: ComponentStory<typeof AdminPanelPage> = () => (
+    <AdminPanelPage />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

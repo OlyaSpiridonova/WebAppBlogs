@@ -12,7 +12,9 @@ export default {
     },
 } as ComponentMeta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
+const Template: ComponentStory<typeof Sidebar> = (args) => (
+    <Sidebar {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};
@@ -36,6 +38,6 @@ NoAuth.args = {};
 NoAuth.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
-        user: { },
+        user: {},
     }),
 ];

@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/UI/Button';
 import { LoginModal } from '@/features/AuthByUsername';
-import {
-    getUserAuthData,
-} from '@/entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/UI/Text';
 import { AppLink, AppLinkTheme } from '@/shared/UI/AppLink';
 import { HStack } from '@/shared/UI/Stack';
@@ -49,7 +47,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                         theme={AppLinkTheme.SECONDARY}
                         className={cls.createBtn}
                     >
-
                         {t('Создать статью')}
                     </AppLink>
                     <NotificationButton />
@@ -69,10 +66,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 {t('Войти')}
             </Button>
             {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

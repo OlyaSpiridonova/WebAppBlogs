@@ -1,10 +1,10 @@
 {
-    "Профиль":"Profile",
-    "Редактировать":"Edit",
-    "Отменить":"Cancel",
-    "Сохранить":"Save",
-    "Имя":"First name",
-    "Фамилия":"Last name",
+    "Профиль": "Profile",
+    "Редактировать": "Edit",
+    "Отменить": "Cancel",
+    "Сохранить": "Save",
+    "Имя": "First name",
+    "Фамилия": "Last name",
     "Возраст": "Age",
     "Город": "City",
     "Имя пользователя": "Username",
@@ -19,5 +19,4 @@
     "Имя и Фамилия обязательны": "First and Last Name are required",
     "Данные не указаны": "Data not provided",
     "Серверная ошибка при сохранении": "Server error when saving"
-    
 }

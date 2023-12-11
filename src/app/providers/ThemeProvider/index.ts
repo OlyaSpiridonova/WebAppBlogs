@@ -1,5 +1,3 @@
 import ThemeProvider from './UI/ThemeProvider';
 
-export {
-    ThemeProvider,
-};
+export { ThemeProvider };

@@ -19,17 +19,18 @@ export const resetProfile = (profileId: string) => {
             country: 'Russia',
             city: 'Moscow',
             username: 'testUser',
-            avatar: 'https://w7.pngwing.com/pngs/641/941/'
-            + 'png-transparent-avatar-face-female-people-profile-user-woman-avatar-user-icon.png',
+            avatar:
+                'https://w7.pngwing.com/pngs/641/941/' +
+                'png-transparent-avatar-face-female-people-profile-user-woman-avatar-user-icon.png',
         },
     });
 };
 
 declare global {
     namespace Cypress {
-      interface Chainable {
-        updateProfile(firstname: string, lastname: string): Chainable<void>
-        resetProfile(profileId: string): Chainable<void>
-      }
+        interface Chainable {
+            updateProfile(firstname: string, lastname: string): Chainable<void>;
+            resetProfile(profileId: string): Chainable<void>;
+        }
     }
-  }
+}
