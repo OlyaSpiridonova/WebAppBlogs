@@ -8,7 +8,7 @@ import { Text } from '@/shared/UI/Text';
 import { StarRating } from '@/shared/UI/StarRating';
 import { Modal } from '@/shared/UI/Modal';
 import { Input } from '@/shared/UI/Input';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/UI/Button';
+import { Button } from '@/shared/UI/Button';
 import { Drawer } from '@/shared/UI/Drawer';
 
 interface RatingCardProps {
@@ -91,7 +91,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                         <HStack max gap="16" justify="end">
                             <Button
                                 data-testid="RatingCard.Close"
-                                theme={ButtonTheme.OUTLINE_RED}
+                                theme="outline"
                                 onClick={cancelHandler}
                             >
                                 {t('Закрыть')}
@@ -114,7 +114,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                             <Button
                                 onClick={acceptHandler}
                                 fullWidth
-                                size={ButtonSize.L}
+                                size="size_l"
                             >
                                 {t('Отправить')}
                             </Button>

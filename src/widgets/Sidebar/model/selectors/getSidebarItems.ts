@@ -1,9 +1,9 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
-import AboutIcon from '@/shared/assets/icons/about-20-20.svg';
-import MainIcon from '@/shared/assets/icons/main-20-20.svg';
-import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg';
-import Article from '@/shared/assets/icons/articles-20-20.svg';
+import AboutIcon from '@/shared/assets/icons/about.svg';
+import MainIcon from '@/shared/assets/icons/main.svg';
+import ProfileIcon from '@/shared/assets/icons/profile.svg';
+import Article from '@/shared/assets/icons/articles.svg';
 import { SidebarItemType } from '../types/sidebarItem';
 import {
     getRouteAbout,

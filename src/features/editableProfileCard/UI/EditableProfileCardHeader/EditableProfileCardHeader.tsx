@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { Text } from '@/shared/UI/Text';
-import { Button, ButtonTheme } from '@/shared/UI/Button';
+import { Button } from '@/shared/UI/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
 import { HStack } from '@/shared/UI/Stack';
@@ -44,7 +44,7 @@ export const EditableProfileCardHeader = ({
                 <div>
                     {readonly ? (
                         <Button
-                            theme={ButtonTheme.OUTLINE}
+                            theme="outline"
                             onClick={onEdit}
                             data-testid="EditableProfileCardHeader.EditButton"
                         >
@@ -53,7 +53,7 @@ export const EditableProfileCardHeader = ({
                     ) : (
                         <HStack gap="8">
                             <Button
-                                theme={ButtonTheme.OUTLINE_RED}
+                                theme="outline"
                                 onClick={onCancelEdit}
                                 data-testid="EditableProfileCardHeader.CancelButton"
                             >
@@ -61,7 +61,7 @@ export const EditableProfileCardHeader = ({
                             </Button>
 
                             <Button
-                                theme={ButtonTheme.OUTLINE}
+                                theme="outline"
                                 onClick={onSave}
                                 data-testid="EditableProfileCardHeader.SaveButton"
                             >

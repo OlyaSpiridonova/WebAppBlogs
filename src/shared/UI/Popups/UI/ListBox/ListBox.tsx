@@ -3,7 +3,7 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirections } from '@/shared/types/ui';
 import cls from './ListBox.module.scss';
-import { Button, ButtonTheme } from '../../../Button/Button';
+import { Button } from '../../../Button/Button';
 import { HStack } from '../../../Stack';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
@@ -53,7 +53,7 @@ export function ListBox(props: ListBoxProps) {
                 disabled={readonly}
             >
                 <HListBox.Button as="div" className={popupCls.trigger}>
-                    <Button theme={ButtonTheme.OUTLINE} disabled={readonly}>
+                    <Button theme="outline" disabled={readonly}>
                         {value ?? defaultValue}
                     </Button>
                 </HListBox.Button>

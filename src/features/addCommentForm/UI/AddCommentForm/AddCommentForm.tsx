@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/UI/Input';
-import { Button, ButtonTheme } from '@/shared/UI/Button';
+import { Button } from '@/shared/UI/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     DynamicModuleLoader,
@@ -58,7 +58,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                     onChange={onCommentTextChange}
                 />
                 <Button
-                    theme={ButtonTheme.OUTLINE}
+                    theme="outline"
                     onClick={onSendHandler}
                     data-testid="addCommentForm.Button"
                 >

@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/UI/Button';
+import { Button } from '@/shared/UI/Button';
 import { Input } from '@/shared/UI/Input';
 import { Text, TextTheme } from '@/shared/UI/Text';
 import {
@@ -82,7 +82,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     value={password}
                 />
                 <Button
-                    theme={ButtonTheme.OUTLINE}
+                    theme="outline"
                     className={cls.loginBtn}
                     onClick={onLoginClick}
                     disabled={isLoading}

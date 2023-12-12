@@ -1,15 +1,15 @@
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/UI/Button';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { VStack } from '@/shared/UI/Stack';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { AppLogo } from '@/shared/UI/AppLogo';
+import { HStack, VStack } from '@/shared/UI/Stack';
+import { Icon } from '@/shared/UI/Icon';
+import ArrowIcon from '@/shared/assets/icons/arrowDown.svg';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/UI/AppLogo';
 
 interface SidebarProps {
     className?: string;
@@ -36,51 +36,35 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         [collapsed, sidebarItemsList],
     );
 
-    const deprecatedSidebar = (
+    return (
         <aside
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
         >
-            <Button
-                data-testid="sidebar-toggle"
-                onClick={onToggle}
-                className={cls.collapseBtn}
-                theme={ButtonTheme.BACKGROUND_INVERTED}
-                size={ButtonSize.L}
-                square
-            >
-                {collapsed ? '>' : '<'}
-            </Button>
+            <AppLogo className={cls.appLogo} size={collapsed ? 30 : 50} />
             <VStack role="navigation" gap="8" className={cls.items}>
                 {itemsList}
             </VStack>
-            <div className={cls.switchers}>
+            <Icon
+                data-testid="sidebar-toggle"
+                Svg={ArrowIcon}
+                onClick={onToggle}
+                className={cls.collapseBtn}
+                clickable
+                width={34}
+                height={34}
+            />
+            <HStack
+                gap="16"
+                justify="center"
+                align="center"
+                className={cls.switchers}
+            >
                 <ThemeSwitcher />
-                <LangSwitcher short={collapsed} className={cls.lang} />
-            </div>
+                <LangSwitcher short={collapsed} />
+            </HStack>
         </aside>
-    );
-
-    const newSidebar = (
-        <aside
-            data-testid="sidebar"
-            className={classNames(
-                cls.Sidebar__redesined,
-                { [cls.collapsed]: collapsed },
-                [className],
-            )}
-        >
-            <AppLogo className={cls.appLogo} />
-        </aside>
-    );
-
-    return (
-        <ToggleFeatures
-            feature="isAppRedesigned"
-            off={deprecatedSidebar}
-            on={newSidebar}
-        />
     );
 });

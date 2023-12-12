@@ -6,9 +6,10 @@ import LogoSvg from '../../assets/icons/appLogo.svg';
 
 interface AppLogoProps {
     className?: string;
+    size?: number;
 }
 
-export const AppLogo = memo(({ className }: AppLogoProps) => {
+export const AppLogo = memo(({ className, size }: AppLogoProps) => {
     return (
         <HStack
             max
@@ -17,7 +18,7 @@ export const AppLogo = memo(({ className }: AppLogoProps) => {
         >
             <div className={cls.gradientBig} />
             <div className={cls.gradientSmall} />
-            <LogoSvg className={cls.appLogo} />
+            <LogoSvg width={size} height={size} className={cls.appLogo} />
         </HStack>
     );
 });
