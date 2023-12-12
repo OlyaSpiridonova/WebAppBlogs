@@ -665,7 +665,8 @@
       ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNAUe6jRZ_5QLveAzu0Ap1GpVs8boSa7TJUlEU6whBZcA6WeqdgFaaEUvsCOCydgP4XSE&usqp=CAU",
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_dark_theme",

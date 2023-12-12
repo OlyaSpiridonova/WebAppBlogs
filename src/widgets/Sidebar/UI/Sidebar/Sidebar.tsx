@@ -8,6 +8,8 @@ import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { AppLogo } from '@/shared/UI/AppLogo';
 
 interface SidebarProps {
     className?: string;
@@ -34,7 +36,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         [collapsed, sidebarItemsList],
     );
 
-    return (
+    const deprecatedSidebar = (
         <aside
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
@@ -59,5 +61,26 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 <LangSwitcher short={collapsed} className={cls.lang} />
             </div>
         </aside>
+    );
+
+    const newSidebar = (
+        <aside
+            data-testid="sidebar"
+            className={classNames(
+                cls.Sidebar__redesined,
+                { [cls.collapsed]: collapsed },
+                [className],
+            )}
+        >
+            <AppLogo className={cls.appLogo} />
+        </aside>
+    );
+
+    return (
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            off={deprecatedSidebar}
+            on={newSidebar}
+        />
     );
 });

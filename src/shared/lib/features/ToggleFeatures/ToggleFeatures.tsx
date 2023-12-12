@@ -1,4 +1,4 @@
-import { ReactElement, memo } from 'react';
+import { ReactElement } from 'react';
 import { FeatureFlags } from '../../../types/featureFlags';
 import { getFeatureFlags } from '../setGetFeatures';
 
@@ -8,7 +8,7 @@ interface ToggleFeaturesProps {
     off: ReactElement;
 }
 
-export const ToggleFeatures = memo((props: ToggleFeaturesProps) => {
+export const ToggleFeatures = (props: ToggleFeaturesProps) => {
     const { feature, on, off } = props;
 
     if (getFeatureFlags(feature)) {
@@ -16,4 +16,4 @@ export const ToggleFeatures = memo((props: ToggleFeaturesProps) => {
     }
 
     return off;
-});
+};

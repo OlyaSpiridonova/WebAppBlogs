@@ -10,6 +10,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 import { TestProps } from '@/shared/types/testTypes';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -46,7 +47,7 @@ export const Page = memo((props: PageProps) => {
         );
     }, 500);
 
-    return (
+    const deprecatedPage = (
         <main
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
@@ -58,5 +59,27 @@ export const Page = memo((props: PageProps) => {
                 <div className={cls.trigger} ref={triggerRef} />
             ) : null}
         </main>
+    );
+
+    const newPage = (
+        <main
+            ref={wrapperRef}
+            className={classNames(cls.Page__redesined, {}, [className])}
+            onScroll={onScroll}
+            data-testid={props['data-testid'] ?? 'Page'}
+        >
+            {children}
+            {onScrollEnd ? (
+                <div className={cls.trigger} ref={triggerRef} />
+            ) : null}
+        </main>
+    );
+
+    return (
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            off={deprecatedPage}
+            on={newPage}
+        />
     );
 });
