@@ -5,7 +5,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entities/Currency';
-import { Text, TextTheme } from '@/shared/UI/Text';
+import { Text } from '@/shared/UI/Text';
 import { ProfileCard } from '@/entities/Profile';
 import {
     DynamicModuleLoader,
@@ -128,7 +128,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 {validateErrors?.length &&
                     validateErrors.map((err) => (
                         <Text
-                            theme={TextTheme.ERROR}
+                            theme="error"
                             text={validateErrorTranslates[err]}
                             key={err}
                             data-testid="EditableProfileCard.Error"

@@ -2,17 +2,16 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    background: var(--card-bg);
+    background: var(--dark-bg);
     z-index: 1000;
-    border: 1px solid var(--primary-color);
-    border-radius: 8px;
 }
 
 .item {
     padding: 10px 25px;
     width: 100%;
+    background: none;
     border: none;
     outline: none;
-    color: var(--inverted-secondary-color);
+    color: var(--text);
     cursor: pointer;
 }

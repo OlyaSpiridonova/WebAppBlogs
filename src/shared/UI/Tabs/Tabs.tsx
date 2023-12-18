@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { ReactNode, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Tabs.module.scss';
-import { Card, CardTheme } from '../Card/Card';
+import { Card } from '../Card/Card';
 
 export interface TabItem<T extends string> {
     value: T;
@@ -31,11 +31,7 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
         <div className={classNames(cls.Tabs, {}, [className])}>
             {tabs.map((tab) => (
                 <Card
-                    theme={
-                        tab.value === value
-                            ? CardTheme.NORMAL
-                            : CardTheme.OUTLINED
-                    }
+                    theme={tab.value === value ? 'normal' : 'outlined'}
                     className={cls.tab}
                     key={tab.value}
                     onClick={onClickHandle(tab)}

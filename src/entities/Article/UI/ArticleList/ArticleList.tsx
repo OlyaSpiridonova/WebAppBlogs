@@ -1,7 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/UI/Text';
+import { Text } from '@/shared/UI/Text';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/articleConsts';
 import cls from './ArticleList.module.scss';
@@ -56,7 +56,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     cls[view],
                 ])}
             >
-                <Text size={TextSize.L} title={t('Статьи не найдены')} />
+                <Text size="size_l" title={t('Статьи не найдены')} />
             </div>
         );
     }

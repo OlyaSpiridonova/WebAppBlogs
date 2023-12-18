@@ -37,7 +37,7 @@ export function ListBox(props: ListBoxProps) {
         direction = 'bottomRight',
     } = props;
 
-    const optionsClasses = [mapDirectionClass[direction]];
+    const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
 
     return (
         <HStack gap="8">

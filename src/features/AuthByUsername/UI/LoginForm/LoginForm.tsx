@@ -4,7 +4,7 @@ import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/UI/Button';
 import { Input } from '@/shared/UI/Input';
-import { Text, TextTheme } from '@/shared/UI/Text';
+import { Text } from '@/shared/UI/Text';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -63,7 +63,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 {error && (
                     <Text
                         text={t('Вы ввели неверный логин или пароль')}
-                        theme={TextTheme.ERROR}
+                        theme="error"
                     />
                 )}
                 <Input

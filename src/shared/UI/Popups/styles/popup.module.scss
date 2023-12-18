@@ -2,6 +2,12 @@
     position: relative;
 }
 
+.menu {
+    border: 1px solid var(--accent);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
 .trigger {
     cursor: pointer;
     border: none;
@@ -12,7 +18,7 @@
 }
 
 .active {
-    background: var(--secondary-color);
+    background: var(--light-bg);
 }
 
 .optionsBottomLeft {

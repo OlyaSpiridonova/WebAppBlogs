@@ -7,7 +7,7 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, TextAlign, TextSize } from '@/shared/UI/Text';
+import { Text } from '@/shared/UI/Text';
 import { Skeleton } from '@/shared/UI/Skeleton';
 import { Avatar } from '@/shared/UI/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
@@ -102,7 +102,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     } else if (error) {
         content = (
             <Text
-                align={TextAlign.CENTER}
+                align="center"
                 title={t('Произошла ошибка при загрузке статьи')}
             />
         );
@@ -117,7 +117,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     />
                 </HStack>
                 <Text
-                    size={TextSize.L}
+                    size="size_l"
                     className={cls.title}
                     title={article?.title}
                     text={article?.subtitle}

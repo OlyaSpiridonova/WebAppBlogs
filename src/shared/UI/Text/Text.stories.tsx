@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { TextTheme, Text, TextSize } from './Text';
+import { Text } from './Text';
 import { Theme } from '@/shared/const/theme';
 
 export default {
@@ -23,7 +23,7 @@ export const Error = Template.bind({});
 Error.args = {
     title: 'Title lorem ipsun',
     text: 'Description Description Description Description',
-    theme: TextTheme.ERROR,
+    theme: 'error',
 };
 
 export const onlyTitle = Template.bind({});
@@ -59,19 +59,19 @@ export const SizeS = Template.bind({});
 SizeS.args = {
     title: 'Title Title Title',
     text: 'Description Description Description Description',
-    size: TextSize.S,
+    size: 'size_s',
 };
 
 export const SizeM = Template.bind({});
 SizeM.args = {
     title: 'Title Title Title',
     text: 'Description Description Description Description',
-    size: TextSize.M,
+    size: 'size_m',
 };
 
 export const SizeL = Template.bind({});
 SizeL.args = {
     title: 'Title Title Title',
     text: 'Description Description Description Description',
-    size: TextSize.L,
+    size: 'size_l',
 };

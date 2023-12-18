@@ -16,7 +16,7 @@ interface PopoverProps {
 export const Popover = (props: PopoverProps) => {
     const { className, trigger, direction = 'bottomRight', children } = props;
 
-    const panelClasses = [mapDirectionClass[direction]];
+    const panelClasses = [mapDirectionClass[direction], popupCls.menu];
 
     return (
         <HPopover

@@ -11,11 +11,10 @@ interface AvatarProps {
     src?: string;
     alt?: string;
     size?: number;
-    fallbackInverted?: boolean;
 }
 
 export const Avatar = (props: AvatarProps) => {
-    const { className, src, alt, size = 100, fallbackInverted } = props;
+    const { className, src, alt, size = 100 } = props;
 
     const styles = useMemo<CSSProperties>(
         () => ({

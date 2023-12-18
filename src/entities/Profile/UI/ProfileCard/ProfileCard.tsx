@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextAlign, TextTheme } from '@/shared/UI/Text';
+import { Text } from '@/shared/UI/Text';
 import { Input } from '@/shared/UI/Input';
 import { Profile } from '../../model/types/profile';
 import { Loader } from '@/shared/UI/Loader';
@@ -69,8 +69,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 ])}
             >
                 <Text
-                    theme={TextTheme.ERROR}
-                    align={TextAlign.CENTER}
+                    theme="error"
+                    align="center"
                     title={t('Произошла ошибка при загрузке данных')}
                     text={t('Попробуйте обновить страницу')}
                 />
