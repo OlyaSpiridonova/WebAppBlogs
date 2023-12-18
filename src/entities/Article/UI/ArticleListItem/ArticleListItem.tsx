@@ -3,7 +3,7 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/UI/Text';
 import { Icon } from '@/shared/UI/Icon';
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { Card } from '@/shared/UI/Card';
 import { Avatar } from '@/shared/UI/Avatar';
 import { Button } from '@/shared/UI/Button';

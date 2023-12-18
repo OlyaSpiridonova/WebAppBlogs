@@ -1,10 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Select, SelectOption } from '@/shared/UI/Select';
+import { SelectOption } from '@/shared/UI/Select';
 import { SortOrder } from '@/shared/types/sort';
 import { ArticleSortField } from '../../../../entities/Article/model/consts/articleConsts';
 import cls from './ArticleSortSelector.module.scss';
+import { ListBox } from '@/shared/UI/Popups';
+import { VStack } from '@/shared/UI/Stack';
+import { Text } from '@/shared/UI/Text';
 
 interface ArticleSortSelectorProps {
     className?: string;
@@ -52,18 +55,19 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select
-                options={sortFieldOptions}
-                label={t('Сортировать ПО')}
-                value={sort}
-                onChange={onChangeSort}
-            />
-            <Select
-                options={orderOptions}
-                label={t('по')}
-                value={order}
-                onChange={onChangeOrder}
-            />
+            <VStack gap="8">
+                <Text text={t('Сортировать по:')} />
+                <ListBox
+                    items={sortFieldOptions}
+                    value={sort}
+                    onChange={onChangeSort}
+                />
+                <ListBox
+                    items={orderOptions}
+                    value={order}
+                    onChange={onChangeOrder}
+                />
+            </VStack>
         </div>
     );
 });

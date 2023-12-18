@@ -10,7 +10,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Text } from '@/shared/UI/Text';
 import { Skeleton } from '@/shared/UI/Skeleton';
 import { Avatar } from '@/shared/UI/Avatar';
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import { Icon } from '@/shared/UI/Icon';
 import { HStack, VStack } from '@/shared/UI/Stack';
