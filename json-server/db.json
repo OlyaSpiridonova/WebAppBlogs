@@ -669,7 +669,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "isArticlePageWasOpen": true
       }
@@ -728,7 +728,7 @@
   "profile": [
     {
       "id": "1",
-      "first": "user1",
+      "first": "user2",
       "lastname": "Spiridonova",
       "age": 23,
       "currency": "RUB",
