@@ -14,10 +14,10 @@ import {
     ArticleBlockType,
     ArticleView,
 } from '../../model/consts/articleConsts';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppImage } from '@/shared/UI/AppImage';
 import { Skeleton } from '@/shared/UI/Skeleton';
+import { HStack, VStack } from '@/shared/UI/Stack';
 
 interface ArticleListItemProps {
     className?: string;
@@ -31,10 +31,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const { t } = useTranslation('article-details');
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
-        <>
+        <HStack gap="8">
+            <Icon Svg={EyeIcon} width={32} height={32} />
             <Text text={String(article.views)} className={cls.views} />
-            <Icon Svg={EyeIcon} />
-        </>
+        </HStack>
     );
 
     if (view === ArticleView.BIG) {
@@ -42,41 +42,36 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             (block) => block.type === ArticleBlockType.TEXT,
         ) as ArticleTextBlock;
         return (
-            <div
+            <Card
+                padding="24"
+                fullWidth
                 className={classNames(cls.ArticleListItem, {}, [
                     className,
                     cls[view],
                 ])}
                 data-testid="ArticleListItem"
             >
-                <Card>
-                    <div className={cls.header}>
-                        <Avatar
-                            size={30}
-                            src={article.user.avatar}
-                            className={cls.avatar}
-                        />
-                        <Text
-                            text={article.user.username}
-                            className={cls.username}
-                        />
-                        <Text text={article.createdAt} className={cls.date} />
-                    </div>
-                    <Text title={article.title} className={cls.title} />
-                    {types}
+                <VStack max gap="16">
+                    <HStack gap="8" max>
+                        <Avatar size={32} src={article.user.avatar} />
+                        <Text text={article.user.username} bold />
+                        <Text text={article.createdAt} />
+                    </HStack>
+                    <Text title={article.title} bold />
+                    <Text title={article.subtitle} size="size_s" />
                     <AppImage
                         fallback={<Skeleton width="100%" height={250} />}
                         src={article.img}
                         alt={article.title}
                         className={cls.image}
                     />
-                    {textBlock && (
-                        <ArticleTextBlockComponent
-                            block={textBlock}
+                    {textBlock?.paragraphs && (
+                        <Text
                             className={cls.textBlock}
+                            text={textBlock.paragraphs.slice(0, 2).join(' ')}
                         />
                     )}
-                    <div className={cls.footer}>
+                    <HStack justify="between" max>
                         <AppLink
                             to={getRouteArticleDetails(article.id)}
                             target={target}
@@ -84,9 +79,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             <Button theme="outline">{t('Читать далее')}</Button>
                         </AppLink>
                         {views}
-                    </div>
-                </Card>
-            </div>
+                    </HStack>
+                </VStack>
+            </Card>
         );
     }
 

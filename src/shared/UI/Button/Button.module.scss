@@ -37,9 +37,13 @@
 }
 
 .outline {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    border-radius: 34px;
+    border: 1px solid var(--icon);
     background: none;
+
+    &:hover {
+        border: 1px solid var(--accent);
+    }
 }
 
 .filled {
