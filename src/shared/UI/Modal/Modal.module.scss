@@ -10,16 +10,15 @@
     opacity: 0;
     pointer-events: none;
     z-index: var(--modal-z-index);
-    color: var(--primary-color);
 }
 
 .content {
     padding: 20px;
     border-radius: 12px;
-    background: var(--bg-color);
+    background: var(--light-bg);
     transition: 0.3s transform;
     transform: scale(0.5);
-    max-width: 60%;
+    width: 350px;
     z-index: var(--modal-z-index);
 }
 

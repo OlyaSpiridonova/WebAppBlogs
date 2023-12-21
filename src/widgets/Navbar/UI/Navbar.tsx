@@ -40,7 +40,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <Button theme="clear" className={cls.links} onClick={onShowModal}>
+            <Button theme="outline" className={cls.links} onClick={onShowModal}>
                 {t('Войти')}
             </Button>
             {isAuthModal && (

@@ -28,5 +28,8 @@
     "Поиск": "Search",
     "Вернуться к списку": "Back to list",
     "Редактировать": "Edit",
-    "Рекомендуем": "Recommend"
+    "Рекомендуем": "Recommend",
+    "{{count}} просмотров_zero": "{{count}} views",
+    "{{count}} просмотров_one": "{{count}} view",
+    "{{count}} просмотров_other": "{{count}} views"
 }

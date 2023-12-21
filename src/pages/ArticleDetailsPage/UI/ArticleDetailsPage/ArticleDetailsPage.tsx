@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
@@ -11,9 +10,11 @@ import { Page } from '@/widgets/Page';
 import { ArticleRecomendationsList } from '@/features/articleRecomendationsList';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slice';
-import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -33,13 +34,18 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetailsPage)}>
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
-                <ArticleRecomendationsList />
-                <ArticleDetailsComments id={id} />
-            </Page>
+            <StickyContentLayout
+                content={
+                    <Page className={classNames(cls.ArticleDetailsPage)}>
+                        {/* <ArticleDetailsPageHeader /> */}
+                        <DetailsContainer />
+                        <ArticleRating articleId={id} />
+                        <ArticleRecomendationsList />
+                        <ArticleDetailsComments id={id} />
+                    </Page>
+                }
+                right={<AdditionalInfoContainer />}
+            />
         </DynamicModuleLoader>
     );
 };
