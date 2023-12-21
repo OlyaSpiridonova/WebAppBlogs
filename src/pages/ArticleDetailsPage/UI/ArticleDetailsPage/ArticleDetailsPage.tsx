@@ -37,7 +37,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             <StickyContentLayout
                 content={
                     <Page className={classNames(cls.ArticleDetailsPage)}>
-                        {/* <ArticleDetailsPageHeader /> */}
                         <DetailsContainer />
                         <ArticleRating articleId={id} />
                         <ArticleRecomendationsList />

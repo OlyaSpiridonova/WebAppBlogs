@@ -1,9 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import CopyIcon from '@/shared/assets/icons/copy-20-20.svg';
+import CopyIcon from '@/shared/assets/icons/copy.svg';
 import cls from './Code.module.scss';
-import { Button } from '../Button/Button';
+import { Icon } from '../Icon';
 
 interface CodeProps {
     className?: string;
@@ -19,9 +19,14 @@ export const Code = memo((props: CodeProps) => {
 
     return (
         <pre className={classNames(cls.Code, {}, [className])}>
-            <Button onClick={onCopy} className={cls.copyBtn} theme="clear">
-                <CopyIcon className={cls.copyIcon} />
-            </Button>
+            <Icon
+                width={20}
+                height={20}
+                clickable
+                onClick={onCopy}
+                Svg={CopyIcon}
+                className={cls.copyBtn}
+            />
             <code>{text}</code>
         </pre>
     );
