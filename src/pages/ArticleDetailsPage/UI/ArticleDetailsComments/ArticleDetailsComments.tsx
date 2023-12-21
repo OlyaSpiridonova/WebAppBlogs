@@ -16,6 +16,7 @@ import {
     getArticleCommentsIsLoading,
 } from '../../model/selectors/comments';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
+import { Card } from '@/shared/UI/Card';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -48,10 +49,12 @@ export const ArticleDetailsComments = memo(
 
         return (
             <VStack gap="16" max className={classNames('', {}, [className])}>
-                <Text title={t('Комментарии')} />
-                <Suspense fallback={<Loader />}>
-                    <AddCommentForm onSendComment={onSendComment} />
-                </Suspense>
+                <Card padding="24" fullWidth>
+                    <Text title={t('Комментарии')} bold />
+                    <Suspense fallback={<Loader />}>
+                        <AddCommentForm onSendComment={onSendComment} />
+                    </Suspense>
+                </Card>
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}

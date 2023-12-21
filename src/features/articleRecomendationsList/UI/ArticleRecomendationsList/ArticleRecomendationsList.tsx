@@ -30,7 +30,7 @@ export const ArticleRecomendationsList = memo(
                 className={classNames('', {}, [className])}
                 data-testid="ArticleRecomendationsList"
             >
-                <Text title={t('Рекомендуем')} />
+                <Text title={t('Рекомендуем')} bold />
                 <ArticleList target="_blank" articles={articles} />
             </VStack>
         );

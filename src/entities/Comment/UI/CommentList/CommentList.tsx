@@ -4,6 +4,7 @@ import { Text } from '@/shared/UI/Text';
 import { VStack } from '@/shared/UI/Stack';
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
+import { Card } from '@/shared/UI/Card';
 
 interface CommentListProps {
     className?: string;
@@ -28,11 +29,13 @@ export const CommentList = memo((props: CommentListProps) => {
         <VStack gap="16" max>
             {comments?.length ? (
                 comments.map((comment) => (
-                    <CommentCard
-                        comment={comment}
-                        isLoading={isLoading}
-                        key={comment.id}
-                    />
+                    <Card padding="24" fullWidth>
+                        <CommentCard
+                            comment={comment}
+                            isLoading={isLoading}
+                            key={comment.id}
+                        />
+                    </Card>
                 ))
             ) : (
                 <Text text={t('Комментарии отсутствуют')} />

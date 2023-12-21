@@ -3,7 +3,6 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/UI/Input';
-import { Button } from '@/shared/UI/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     DynamicModuleLoader,
@@ -15,6 +14,10 @@ import {
 } from '../../model/slice/addCommentFormSlice';
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss';
+import SendIcon from '@/shared/assets/icons/send.svg';
+import { Icon } from '@/shared/UI/Icon';
+import { HStack } from '@/shared/UI/Stack';
+import SearchIcon from '@/shared/assets/icons/search.svg';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -46,7 +49,9 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div
+            <HStack
+                gap="16"
+                max
                 className={classNames(cls.AddCommentForm)}
                 data-testid="addCommentForm"
             >
@@ -56,15 +61,15 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                     placeholder={t('Введите текст комментария')}
                     value={text}
                     onChange={onCommentTextChange}
+                    addonLeft={<Icon Svg={SearchIcon} />}
                 />
-                <Button
-                    theme="outline"
+                <Icon
+                    Svg={SendIcon}
+                    clickable
                     onClick={onSendHandler}
                     data-testid="addCommentForm.Button"
-                >
-                    {t('Отправить')}
-                </Button>
-            </div>
+                />
+            </HStack>
         </DynamicModuleLoader>
     );
 });

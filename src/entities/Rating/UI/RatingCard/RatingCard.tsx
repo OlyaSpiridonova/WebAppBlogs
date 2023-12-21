@@ -72,6 +72,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
     return (
         <Card
+            padding="24"
             className={classNames('', {}, [className])}
             fullWidth
             data-testid="RatingCard"

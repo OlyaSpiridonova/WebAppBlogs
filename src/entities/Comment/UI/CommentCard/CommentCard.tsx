@@ -55,7 +55,11 @@ export const CommentCard = memo((props: CommentCardProps) => {
                 className={cls.header}
             >
                 <Avatar size={30} src={comment?.user.avatar} />
-                <Text className={cls.username} title={comment?.user.username} />
+                <Text
+                    className={cls.username}
+                    title={comment?.user.username}
+                    bold
+                />
             </AppLink>
             <Text className={cls.text} text={comment?.text} />
         </VStack>

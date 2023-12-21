@@ -15,6 +15,7 @@ import { ArticleRating } from '@/features/articleRating';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
 import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
+import { VStack } from '@/shared/UI/Stack';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -37,10 +38,12 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             <StickyContentLayout
                 content={
                     <Page className={classNames(cls.ArticleDetailsPage)}>
-                        <DetailsContainer />
-                        <ArticleRating articleId={id} />
-                        <ArticleRecomendationsList />
-                        <ArticleDetailsComments id={id} />
+                        <VStack gap="16" max>
+                            <DetailsContainer />
+                            <ArticleRating articleId={id} />
+                            <ArticleRecomendationsList />
+                            <ArticleDetailsComments id={id} />
+                        </VStack>
                     </Page>
                 }
                 right={<AdditionalInfoContainer />}

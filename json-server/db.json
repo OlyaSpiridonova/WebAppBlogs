@@ -147,6 +147,18 @@
       "userId": "1",
       "text": "good",
       "id": "BfKCgpZ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test",
+      "id": "hWxCI2k"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nisi nulla laboriosam, expedita nam deleniti aut pariatur, ipsum eos quae quos rem dignissimos quibusdam id. Ab hic rerum qui pariatur? Suscipit est reiciendis omnis unde nesciunt voluptas perspiciatis, accusamus doloremque numquam in voluptatibus quos inventore quis ipsam? Quod quisquam odio est odit repellendus debitis laudantium illo? Beatae cum inventore porro! Blanditiis odio ad quidem necessitatibus earum minima soluta similique excepturi repellat, laborum eos! Recusandae, delectus! Repellendus ab eaque similique assumenda ullam sapiente earum vitae incidunt accusantium blanditiis? Porro, distinctio deserunt. Adipisci consequuntur illum cupiditate provident, quo labore beatae molestias a sint eveniet iure ea repellendus minima alias, deleniti veritatis animi odit. Nostrum exercitationem, odit consequatur ea mollitia eligendi at tempora! Maiores iure cum, labore deleniti eius possimus quia sed obcaecati debitis architecto excepturi animi doloremque consequatur quae deserunt tenetur facilis, consectetur hic atque voluptatum quas. Praesentium ad tempore necessitatibus. Ut? Voluptate placeat numquam possimus consectetur expedita assumenda ad nisi officia qui, perferendis cupiditate voluptatum id ducimus, amet iure sapiente exercitationem nulla! Voluptatum at optio suscipit quibusdam voluptates perferendis sunt maxime! Itaque nemo laudantium maiores? Laudantium, cupiditate in eveniet tenetur molestiae alias voluptates maiores repellendus eius dicta? Tempore consequuntur vel alias, voluptates vitae delectus in officiis facilis eligendi deserunt, officia praesentium. Iusto, nihil? Impedit exercitationem cumque libero rerum? Temporibus eius d",
+      "id": "LMBaiaR"
     }
   ],
   "articles": [
@@ -826,6 +838,18 @@
       "rate": 4,
       "feedback": "Хорошая статья! Но можно и лучше",
       "id": "o3NUeP4"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 3,
+      "id": "i9fmpYN"
+    },
+    {
+      "userId": "1",
+      "articleId": "18",
+      "rate": 4,
+      "id": "dPCDRMz"
     }
   ],
   "profile-ratings": [

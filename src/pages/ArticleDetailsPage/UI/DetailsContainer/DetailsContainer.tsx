@@ -21,7 +21,7 @@ export const DetailsContainer = memo((props: DetailsContainerProps) => {
         navigate(getRouteArticles());
     }, [navigate]);
     return (
-        <Card padding="24" className={className}>
+        <Card padding="24" className={className} fullWidth>
             <Button
                 theme="outline"
                 onClick={onBackToList}
