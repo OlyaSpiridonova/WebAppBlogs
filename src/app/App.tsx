@@ -7,8 +7,8 @@ import { getUserInited, initAuthData } from '@/entities/User';
 import { AppRouter } from './providers/router';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { PageLoader } from '@/widgets/PageLoader';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 
 function App() {
     const { theme } = useTheme();
@@ -20,7 +20,7 @@ function App() {
     }, [dispatch]);
 
     if (!userInited) {
-        return <PageLoader />;
+        return <AppLoaderLayout />;
     }
 
     return (

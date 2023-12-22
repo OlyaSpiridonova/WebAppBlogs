@@ -63,6 +63,7 @@ module.exports = {
                     'theme',
                     'size',
                     'wrap',
+                    'color',
                 ],
             },
         ],

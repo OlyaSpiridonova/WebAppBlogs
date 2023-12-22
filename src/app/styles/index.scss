@@ -8,7 +8,7 @@
 .app_modal,
 .app_drawer {
     font: var(--font-m);
-    color: var(--primary-color);
+    color: var(--dark-bg);
 }
 
 .app {
@@ -28,11 +28,11 @@
 }
 
 *::-webkit-scrollbar-track {
-    background: var(--card-bg);
+    background: var(--light-bg);
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--inverted-primary-color);
+    background-color: var(--icon);
     border-radius: 10px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--accent);
 }

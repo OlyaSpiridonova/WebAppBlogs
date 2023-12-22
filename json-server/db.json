@@ -681,7 +681,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_orange_theme",
         "isFirstVisit": true,
         "isArticlePageWasOpen": true
       }
@@ -743,7 +743,7 @@
       "first": "user2",
       "lastname": "Spiridonova",
       "age": 23,
-      "currency": "RUB",
+      "currency": "EUR",
       "country": "Russia",
       "city": "Moscow",
       "username": "admin",

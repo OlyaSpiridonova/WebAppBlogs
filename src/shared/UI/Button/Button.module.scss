@@ -38,11 +38,22 @@
 
 .outline {
     border-radius: 34px;
-    border: 1px solid var(--icon);
     background: none;
 
     &:hover {
         border: 1px solid var(--accent);
+    }
+
+    &.normal {
+        border: 1px solid var(--icon);
+    }
+
+    &.error {
+        border: 1px solid var(--cancel);
+    }
+
+    &.success {
+        border: 1px solid var(--save);
     }
 }
 
