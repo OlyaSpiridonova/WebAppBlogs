@@ -1,7 +1,19 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
+import withMock from 'storybook-addon-mock';
+import {
+    Article,
+    ArticleBlockType,
+    ArticleDetails,
+    ArticleType,
+} from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
+import { ArticleRating } from '@/features/articleRating';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Page } from '@/widgets/Page';
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ArticleRecomendationsList } from '@/features/articleRecomendationsList';
 
 export default {
     title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
@@ -9,11 +21,21 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [withMock],
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
-    <ArticleDetailsPage {...args} />
-);
+const Template: ComponentStory<typeof ArticleDetailsPage> = () => {
+    const id = '1';
+    return (
+        <Page className={classNames('', {}, [])}>
+            <ArticleDetailsPageHeader />
+            <ArticleDetails id={id} />
+            <ArticleRating articleId={id} />
+            <ArticleRecomendationsList />
+            <ArticleDetailsComments id={id} />
+        </Page>
+    );
+};
 
 const article: Article = {
     id: '1',
