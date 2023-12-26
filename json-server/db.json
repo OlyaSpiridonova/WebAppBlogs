@@ -681,7 +681,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "isArticlePageWasOpen": true
       }
@@ -751,10 +751,10 @@
     },
     {
       "id": "2",
-      "first": "User 1",
+      "first": "UserOne",
       "lastname": "Profile",
       "age": 25,
-      "currency": "RUB",
+      "currency": "USD",
       "country": "Russia",
       "city": "Moscow",
       "username": "user",
