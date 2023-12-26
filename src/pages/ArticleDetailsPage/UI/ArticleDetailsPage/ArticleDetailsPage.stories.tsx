@@ -8,12 +8,10 @@ import {
 } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { ArticleRating } from '@/features/articleRating';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { ArticleRecomendationsList } from '@/features/articleRecomendationsList';
 
 export default {
     title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
@@ -30,8 +28,6 @@ const Template: ComponentStory<typeof ArticleDetailsPage> = () => {
         <Page className={classNames('', {}, [])}>
             <ArticleDetailsPageHeader />
             <ArticleDetails id={id} />
-            <ArticleRating articleId={id} />
-            <ArticleRecomendationsList />
             <ArticleDetailsComments id={id} />
         </Page>
     );

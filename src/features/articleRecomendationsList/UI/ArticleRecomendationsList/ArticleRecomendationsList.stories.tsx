@@ -1,9 +1,8 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { type ComponentStory, type ComponentMeta } from '@storybook/react';
 import withMock from 'storybook-addon-mock';
+import { type Article } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleRecomendationsList } from './ArticleRecomendationsList';
-import TestIcon from '@/shared/assets/icons/jsTest.jpg';
 
 export default {
     title: 'features/ArticleRecomendationsList',
@@ -12,30 +11,35 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [withMock],
+    parameters: {
+        loki: { skip: true },
+    },
 } as ComponentMeta<typeof ArticleRecomendationsList>;
 
 const Template: ComponentStory<typeof ArticleRecomendationsList> = (args) => (
     <ArticleRecomendationsList {...args} />
 );
-const article = {
+
+const article: Article = {
     id: '1',
-    img: TestIcon,
+    img: '',
     createdAt: '',
-    views: 10000,
+    views: 123,
     user: { id: '1', username: '123' },
     blocks: [],
     type: [],
-    title: 'Article title',
-    subtitle: 'Article subtitle',
+    title: '123',
+    subtitle: 'asfsa',
 };
+
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [StoreDecorator({})];
 Normal.parameters = {
     mockData: [
         {
-            url: `${__API__}/articles?_limit=6`,
-            methods: 'GET',
+            url: `${__API__}/articles?_limit=3`,
+            method: 'GET',
             status: 200,
             response: [
                 { ...article, id: '1' },

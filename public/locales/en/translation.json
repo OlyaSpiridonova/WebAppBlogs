@@ -21,6 +21,7 @@
     "Вы ввели неверный логин или пароль": "Uncorrect username or password",
     "Выйти": "Logout",
     "Профиль": "Profile",
+    "Админка": "Admin",
     "Статьи": "Articles",
     "Введите текст комментария": "Enter comment text",
     "Отправить": "Send",
@@ -29,6 +30,7 @@
     "Вернуться к списку": "Back to list",
     "Редактировать": "Edit",
     "Рекомендуем": "Recommend",
+    "Найти": "Search",
     "{{count}} просмотров_zero": "{{count}} views",
     "{{count}} просмотров_one": "{{count}} view",
     "{{count}} просмотров_other": "{{count}} views"
