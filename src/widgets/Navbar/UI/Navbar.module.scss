@@ -5,6 +5,10 @@
 .links,
 .actions {
     margin-left: auto;
+
+    @media (max-width: 960px) {
+        flex-direction: column-reverse;
+    }
 }
 
 .mainLink {

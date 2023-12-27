@@ -31,6 +31,9 @@
     "Редактировать": "Edit",
     "Рекомендуем": "Recommend",
     "Найти": "Search",
+    "Комментарии отсутствуют": "No comments",
+    "Комментарии": "Comments",
+    "Спасибо за оценку!": "Thank you for rating!",
     "{{count}} просмотров_zero": "{{count}} views",
     "{{count}} просмотров_one": "{{count}} view",
     "{{count}} просмотров_other": "{{count}} views"

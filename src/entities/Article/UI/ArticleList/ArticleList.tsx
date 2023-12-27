@@ -65,6 +65,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
         <HStack
             wrap="wrap"
+            justify="center"
             gap="16"
             className={classNames(cls.ArticleList, {}, [])}
             data-testid="ArticleList"

@@ -1,4 +1,5 @@
 import { memo, useCallback } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
@@ -32,23 +33,41 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <StickyContentLayout
-                left={<ViewSelectorContainer />}
-                content={
-                    <Page
-                        data-testid="ArticlesPage"
-                        onScrollEnd={onLoadNextPart}
-                        className={classNames(cls.ArticlesPage, {}, [
-                            className,
-                        ])}
-                    >
-                        <ArticleInfiniteList className={cls.list} />
-                        <ArticlePageGreeting />
-                    </Page>
-                }
-                // eslint-disable-next-line i18next/no-literal-string
-                right={<FiltersContainer />}
-            />
+            <BrowserView>
+                <StickyContentLayout
+                    left={<ViewSelectorContainer />}
+                    content={
+                        <Page
+                            data-testid="ArticlesPage"
+                            onScrollEnd={onLoadNextPart}
+                            className={classNames(cls.ArticlesPage, {}, [
+                                className,
+                            ])}
+                        >
+                            <ArticleInfiniteList className={cls.list} />
+                            <ArticlePageGreeting />
+                        </Page>
+                    }
+                    right={<FiltersContainer />}
+                />
+            </BrowserView>
+            <MobileView>
+                <StickyContentLayout
+                    content={
+                        <Page
+                            data-testid="ArticlesPage"
+                            onScrollEnd={onLoadNextPart}
+                            className={classNames(cls.ArticlesPage, {}, [
+                                className,
+                            ])}
+                        >
+                            <ArticleInfiniteList className={cls.list} />
+                            <ArticlePageGreeting />
+                        </Page>
+                    }
+                    right={<FiltersContainer />}
+                />
+            </MobileView>
         </DynamicModuleLoader>
     );
 };

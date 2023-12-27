@@ -4,6 +4,10 @@
     width: 220px;
     height: 100%;
     border-radius: 32px;
+
+    @media (max-width: 960px) {
+        width: 150px;
+    }
 }
 
 .switchers {

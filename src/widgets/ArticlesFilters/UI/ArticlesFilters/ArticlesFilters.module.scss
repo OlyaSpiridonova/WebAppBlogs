@@ -1,3 +1,7 @@
 .ArticlesFilters {
     width: 264px;
+
+    @media (max-width: 960px) {
+        width: 230px;
+    }
 }
